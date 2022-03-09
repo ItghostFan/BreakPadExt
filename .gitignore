@@ -4,3 +4,9 @@ Podfile.lock
 *.xcodeproj/project.xcworkspace/xcuserdata
 *.xcodeproj/xcuserdata/*.xcuserdatad/
 .DS_Store
+
+# ignore breakpad
+breakpad
+
+# ignore gitsubmodules
+.gitmodules

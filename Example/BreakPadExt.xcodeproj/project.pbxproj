@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		097F95B0D9C7240190A87E64 /* Pods-BreakPadExt_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExt_Example.debug.xcconfig"; path = "Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		14D3048D375ABC19BA6F0D2D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		14D3048D375ABC19BA6F0D2D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		2D363008B9E3517F859D7001 /* Pods_BreakPadExt_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPadExt_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39ECE8F21165A5D575499083 /* Pods-BreakPadExt_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExt_Example.release.xcconfig"; path = "Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* BreakPadExt_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakPadExt_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,12 +61,12 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7871E4ED31AC42E1D1ABFE08 /* BreakPadExt.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = BreakPadExt.podspec; path = ../BreakPadExt.podspec; sourceTree = "<group>"; };
+		7871E4ED31AC42E1D1ABFE08 /* BreakPadExt.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BreakPadExt.podspec; path = ../BreakPadExt.podspec; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93FB2D5C442B0FEEF21B98A6 /* Pods_BreakPadExt_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPadExt_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B885B580771362308CBB2D2B /* Pods-BreakPadExt_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExt_Tests.debug.xcconfig"; path = "Target Support Files/Pods-BreakPadExt_Tests/Pods-BreakPadExt_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD725218F0D7490A00957B40 /* Pods-BreakPadExt_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExt_Tests.release.xcconfig"; path = "Target Support Files/Pods-BreakPadExt_Tests/Pods-BreakPadExt_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C0EAEBD781ED3A8C86194DBE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		C0EAEBD781ED3A8C86194DBE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,6 @@
 				B885B580771362308CBB2D2B /* Pods-BreakPadExt_Tests.debug.xcconfig */,
 				BD725218F0D7490A00957B40 /* Pods-BreakPadExt_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -205,10 +204,11 @@
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "BreakPadExt_Example" */;
 			buildPhases = (
 				940433319B010F25AB5EF24A /* [CP] Check Pods Manifest.lock */,
+				78F6E2C427D89952004A407B /* Run Script Fetch Google BreakPad */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				5917B62535387C5D9829A7FC /* [CP] Embed Pods Frameworks */,
+				4EF1B052920A04193494F88C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -245,7 +245,7 @@
 		6003F582195388D10070C39A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = BPCRASH;
+				CLASSPREFIX = BPCrash;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = ItghostFan;
 				TargetAttributes = {
@@ -259,6 +259,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -342,7 +343,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5917B62535387C5D9829A7FC /* [CP] Embed Pods Frameworks */ = {
+		4EF1B052920A04193494F88C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,6 +360,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		78F6E2C427D89952004A407B /* Run Script Fetch Google BreakPad */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script Fetch Google BreakPad";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexamplePath=`pwd`\nlogPath=$examplePath\"/fetch_google_breakpad.log\"\necho $examplePath >> $logPath\ncd ..\npodPath=`pwd`\ngit submodule add -b chrome_37 -f --name breakpad https://github.com/google/breakpad.git\n\nclassesPath=$podPath\"/BreakPadExt/Classes\"\n\ncd $classesPath\n\nbreakpadPathes=(\n\"breakpad\"\n\"breakpad/src\"\n\"breakpad/src/client\"\n\"breakpad/src/client/ios\"\n\"breakpad/src/client/ios/handler\"\n\"breakpad/src/client/apple\"\n\"breakpad/src/client/apple/Framework\"\n\"breakpad/src/client/mac\"\n\"breakpad/src/client/mac/crash_generation\"\n\"breakpad/src/client/mac/handler\"\n\"breakpad/src/client/mac/sender\"\n\"breakpad/src/common\"\n\"breakpad/src/common/linux\"\n\"breakpad/src/common/mac\"\n\"breakpad/src/google_breakpad\"\n\"breakpad/src/google_breakpad/common\"\n)\nfor breakpadPath in ${breakpadPathes[@]}\ndo\n    mkdir $breakpadPath\ndone\n\nbreakpadFiles=(\n\"breakpad/src/client/minidump_file_writer-inl.h\"\n\"breakpad/src/client/minidump_file_writer.h\"\n\"breakpad/src/client/ios/Breakpad.h\"\n\"breakpad/src/client/ios/BreakpadController.h\"\n\"breakpad/src/client/ios/handler/ios_exception_minidump_generator.h\"\n\"breakpad/src/client/apple/Framework/BreakpadDefines.h\"\n\"breakpad/src/client/mac/handler/ucontext_compat.h\"\n\"breakpad/src/client/mac/handler/breakpad_nlist_64.h\"\n\"breakpad/src/client/mac/handler/dynamic_images.h\"\n\"breakpad/src/client/mac/handler/exception_handler.h\"\n\"breakpad/src/client/mac/handler/minidump_generator.h\"\n\"breakpad/src/client/mac/handler/protected_memory_allocator.h\"\n\"breakpad/src/client/mac/handler/mach_vm_compat.h\"\n\"breakpad/src/client/mac/crash_generation/ConfigFile.h\"\n\"breakpad/src/client/mac/sender/uploader.h\"\n\"breakpad/src/common/basictypes.h\"\n\"breakpad/src/common/convert_UTF.h\"\n\"breakpad/src/common/md5.h\"\n\"breakpad/src/common/memory.h\"\n\"breakpad/src/common/scoped_ptr.h\"\n\"breakpad/src/common/string_conversion.h\"\n\"breakpad/src/common/simple_string_dictionary.h\"\n\"breakpad/src/common/using_std_string.h\"\n\"breakpad/src/common/linux/linux_libc_support.h\"\n\"breakpad/src/common/mac/byteswap.h\"\n\"breakpad/src/common/mac/GTMDefines.h\"\n\"breakpad/src/common/mac/GTMLogger.h\"\n\"breakpad/src/common/mac/HTTPMultipartUpload.h\"\n\"breakpad/src/common/mac/file_id.h\"\n\"breakpad/src/common/mac/macho_id.h\"\n\"breakpad/src/common/mac/macho_utilities.h\"\n\"breakpad/src/common/mac/macho_walker.h\"\n\"breakpad/src/common/mac/scoped_task_suspend-inl.h\"\n\"breakpad/src/common/mac/string_utilities.h\"\n\"breakpad/src/google_breakpad/common/minidump_format.h\"\n\"breakpad/src/google_breakpad/common/minidump_size.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_mac.h\"\n\"breakpad/src/google_breakpad/common/breakpad_types.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_amd64.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_arm.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_arm64.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_mips.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_ppc.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_ppc64.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_sparc.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_x86.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_linux.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_ps3.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_solaris.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_win32.h\"\n\"breakpad/src/client/minidump_file_writer.cc\"\n\"breakpad/src/client/ios/Breakpad.mm\"\n\"breakpad/src/client/ios/BreakpadController.mm\"\n\"breakpad/src/client/ios/handler/ios_exception_minidump_generator.mm\"\n\"breakpad/src/client/mac/crash_generation/ConfigFile.mm\"\n\"breakpad/src/client/mac/handler/breakpad_nlist_64.cc\"\n\"breakpad/src/client/mac/handler/dynamic_images.cc\"\n\"breakpad/src/client/mac/handler/exception_handler.cc\"\n\"breakpad/src/client/mac/handler/minidump_generator.cc\"\n\"breakpad/src/client/mac/handler/protected_memory_allocator.cc\"\n\"breakpad/src/client/mac/sender/uploader.mm\"\n\"breakpad/src/common/convert_UTF.c\"\n\"breakpad/src/common/md5.cc\"\n\"breakpad/src/common/simple_string_dictionary.cc\"\n\"breakpad/src/common/string_conversion.cc\"\n\"breakpad/src/common/mac/file_id.cc\"\n\"breakpad/src/common/mac/GTMLogger.m\"\n\"breakpad/src/common/mac/HTTPMultipartUpload.m\"\n\"breakpad/src/common/mac/macho_id.cc\"\n\"breakpad/src/common/mac/macho_utilities.cc\"\n\"breakpad/src/common/mac/macho_walker.cc\"\n\"breakpad/src/common/mac/string_utilities.cc\"\n)\nfor breakpadFile in ${breakpadFiles[@]}\ndo\n    cp -f $podPath\"/\"$breakpadFile $classesPath\"/\"$breakpadFile\ndone\n\ncd $examplePath\necho \"Fetch Google BreakPad Done!\" >> $logPath\ncd \"${PROJECT_DIR}/../BreakPadExt/Classes/breakpad/src\"\necho `pwd` >> $logPath\n";
 		};
 		940433319B010F25AB5EF24A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

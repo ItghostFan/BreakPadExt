@@ -24,13 +24,22 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/ItghostFan/BreakPadExt'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'ItghostFan' => 'fanchunxing1@joyy.com' }
+  s.author           = { 'ItghostFan' => 'ItghostFan@163.com' }
   s.source           = { :git => 'https://github.com/ItghostFan/BreakPadExt.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
+  
+  s.requires_arc = true
 
-  s.source_files = 'BreakPadExt/Classes/**/*'
+  s.default_subspec = 'BreakPad'
+  
+  s.subspec 'BreakPad' do |breakpad|
+    breakpad.requires_arc = false
+    breakpad.source_files = 'BreakPadExt/Classes/breakpad/**/*'
+  end
+  
+  s.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PROJECT_DIR}/../../BreakPadExt/Classes/breakpad/src"' }
   
   # s.resource_bundles = {
   #   'BreakPadExt' => ['BreakPadExt/Assets/*.png']
@@ -38,5 +47,6 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'Foundation'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
