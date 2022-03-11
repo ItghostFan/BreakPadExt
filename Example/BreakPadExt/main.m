@@ -7,11 +7,11 @@
 //
 
 @import UIKit;
-#import "BPabcAppDelegate.h"
+#import "BPCrashAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([BPabcAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([BPCrashAppDelegate class]));
     }
 }

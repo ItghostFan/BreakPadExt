@@ -1,20 +1,20 @@
 //
-//  BPabcAppDelegate.m
+//  BPCrashAppDelegate.m
 //  BreakPadExt
 //
 //  Created by ItghostFan on 03/09/2022.
 //  Copyright (c) 2022 ItghostFan. All rights reserved.
 //
 
-#import "BPabcAppDelegate.h"
+#import "BPCrashAppDelegate.h"
 
 #import "BreakPadExtController.h"
 
-@interface BPabcAppDelegate ()
+@interface BPCrashAppDelegate ()
 @property (strong, nonatomic) BreakPadExtController *crashController;
 @end
 
-@implementation BPabcAppDelegate
+@implementation BPCrashAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

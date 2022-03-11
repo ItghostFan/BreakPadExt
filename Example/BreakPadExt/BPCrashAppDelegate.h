@@ -1,5 +1,5 @@
 //
-//  BPabcViewController.h
+//  BPCrashAppDelegate.h
 //  BreakPadExt
 //
 //  Created by ItghostFan on 03/09/2022.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BPabcViewController : UIViewController
+@interface BPCrashAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 @end
