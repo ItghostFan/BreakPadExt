@@ -1,14 +1,14 @@
 //
-//  BPCRASHAppDelegate.h
+//  BPabcAppDelegate.h
 //  BreakPadExt
 //
 //  Created by ItghostFan on 03/09/2022.
 //  Copyright (c) 2022 ItghostFan. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
-@interface BPCRASHAppDelegate : UIResponder <UIApplicationDelegate>
+@interface BPabcAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

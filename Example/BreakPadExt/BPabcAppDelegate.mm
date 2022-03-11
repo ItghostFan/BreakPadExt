@@ -1,18 +1,34 @@
 //
-//  BPCRASHAppDelegate.m
+//  BPabcAppDelegate.m
 //  BreakPadExt
 //
 //  Created by ItghostFan on 03/09/2022.
 //  Copyright (c) 2022 ItghostFan. All rights reserved.
 //
 
-#import "BPCRASHAppDelegate.h"
+#import "BPabcAppDelegate.h"
 
-@implementation BPCRASHAppDelegate
+#import "BreakPadExtController.h"
+
+@interface BPabcAppDelegate ()
+@property (strong, nonatomic) BreakPadExtController *crashController;
+@end
+
+@implementation BPabcAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    self.crashController = [BreakPadExtController new];
+    [self.crashController updateConfiguration:
+         @{
+             @BREAKPAD_VENDOR: @"Test",
+             @BREAKPAD_DUMP_DIRECTORY: documentPath,
+             @BREAKPAD_URL: @" "        // 不能为空串～
+         }
+    ];
+    [self.crashController start:NO];
     return YES;
 }
 
@@ -41,6 +57,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [self.crashController stop];
 }
 
 @end

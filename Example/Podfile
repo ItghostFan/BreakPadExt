@@ -4,6 +4,7 @@ platform :ios, '9.0'
 
 target 'BreakPadExt_Example' do
   pod 'BreakPadExt', :path => '../'
+  pod 'ReactiveObjC'
 
   target 'BreakPadExt_Tests' do
     inherit! :search_paths

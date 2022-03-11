@@ -32,11 +32,16 @@ TODO: Add long description of the pod here.
   
   s.requires_arc = true
 
-  s.default_subspec = 'BreakPad'
+  s.default_subspec = 'Core'
   
   s.subspec 'BreakPad' do |breakpad|
     breakpad.requires_arc = false
     breakpad.source_files = 'BreakPadExt/Classes/breakpad/**/*'
+  end
+  
+  s.subspec 'Core' do |core|
+      core.source_files = 'BreakPadExt/Classes/breakpadext/**/*'
+      core.dependency 'BreakPadExt/BreakPad'
   end
   
   s.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PROJECT_DIR}/../../BreakPadExt/Classes/breakpad/src"' }
