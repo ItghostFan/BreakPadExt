@@ -35,8 +35,12 @@
 
 #pragma mark - Core Data Properties
 
-@property(nonatomic, strong) NSManagedObjectContext *managedObjectContextA;
-@property(nonatomic, strong) NSManagedObjectContext *managedObjectContextB;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContextA;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContextB;
+
+#pragma mark - GCD
+
+@property (strong, nonatomic) dispatch_group_t group;
 
 @end
 
@@ -68,7 +72,53 @@
     BP_CRASH_ADD_CRASH_TYPE(NSCharacterConversionException,     @"1.17",    @"✓");
     BP_CRASH_ADD_CRASH_TYPE(NSParseErrorException,              @"1.18",    @"✓");
     
-    BP_CRASH_ADD_CRASH_TYPE(Arithmetic,                         @"2.0",     @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(EXC_BAD_ACCESS,                     @"2.1",     @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(EXC_BAD_INSTRUCTION,                @"2.2",     @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(EXC_ARITHMETIC,                     @"2.3",     @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(EXC_EMULATION,                      @"2.4",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(EXC_SOFTWARE,                       @"2.5",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(EXC_BREAKPOINT,                     @"2.6",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(EXC_SYSCALL,                        @"2.7",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(EXC_MACH_SYSCALL,                   @"2.8",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(EXC_RPC_ALERT,                      @"2.9",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(EXC_CRASH,                          @"2.10",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(EXC_RESOURCE,                       @"2.11",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(EXC_GUARD,                          @"2.12",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(EXC_CORPSE_NOTIFY,                  @"2.13",    @"✗");
+    
+    BP_CRASH_ADD_CRASH_TYPE(SIGHUP,                             @"3.1",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGINT,                             @"3.2",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGQUIT,                            @"3.3",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGILL,                             @"3.4",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGTRAP,                            @"3.5",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGABRT,                            @"3.6",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGPOLL,                            @"3.7",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGIOT,                             @"3.8",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGEMT,                             @"3.9",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGFPE,                             @"3.10",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGKILL,                            @"3.11",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGBUS,                             @"3.12",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGSEGV,                            @"3.13",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGSYS,                             @"3.14",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGPIPE,                            @"3.15",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGALRM,                            @"3.16",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGTERM,                            @"3.17",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGURG,                             @"3.18",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGSTOP,                            @"3.19",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGTSTP,                            @"3.20",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGCONT,                            @"3.21",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGCHLD,                            @"3.22",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGTTIN,                            @"3.23",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGTTOU,                            @"3.24",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGIO,                              @"3.25",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGXCPU,                            @"3.26",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGXFSZ,                            @"3.27",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGVTALRM,                          @"3.28",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGPROF,                            @"3.29",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGWINCH,                           @"3.30",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGINFO,                            @"3.31",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGUSR1,                            @"3.32",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(SIGUSR2,                            @"3.33",    @"✗");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -166,7 +216,7 @@
     self.crashActions[crashType] = NSStringFromSelector(selector);
 }
 
-#pragma mark - NSException
+#pragma mark - NSException 1.0
 
 /// *** Terminating app due to uncaught exception 'NSGenericException', reason: '*** Collection <__NSArrayM: 0x6000025ea5e0> was mutated while being enumerated.'
 /// Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
@@ -326,13 +376,212 @@ BG_CRASH_DEFINE_RAISE(NSParseErrorException, 1.18) {
     NSLog(@"%@", properties);
 }
 
-#pragma mark - Mach
+#pragma mark - Mach 2.0
+
+/// Thread 1: EXC_BAD_ACCESS (code=1, address=0x0)
+BG_CRASH_DEFINE_RAISE(EXC_BAD_ACCESS, 2.1) {
+    char *string = NULL;
+    string[0] = 'a';
+}
+
+
+/// Thread 8: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
+BG_CRASH_DEFINE_RAISE(EXC_BAD_INSTRUCTION, 2.2) {
+    // Invoke Multiple
+    self.group = dispatch_group_create();
+    dispatch_group_enter(self.group);
+    dispatch_group_enter(self.group);
+    dispatch_group_enter(self.group);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        dispatch_group_leave(self.group);
+        sleep(2);
+        dispatch_group_leave(self.group);
+        dispatch_group_leave(self.group);
+    });
+    dispatch_group_notify(self.group, dispatch_get_main_queue(), ^{
+    });
+}
 
 /// Thread 1: EXC_ARITHMETIC (code=EXC_I386_DIV, subcode=0x0)
-BG_CRASH_DEFINE_RAISE(Arithmetic, 2.0) {
-    int denominator = 0;
-    int numerator = 100;
-    NSLog(@"%d", numerator / denominator);
+BG_CRASH_DEFINE_RAISE(EXC_ARITHMETIC, 2.3) {
+   int denominator = 0;
+   int numerator = 100;
+   NSLog(@"%d", numerator / denominator);
+}
+
+BG_CRASH_DEFINE_RAISE(EXC_EMULATION, 2.4) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(EXC_SOFTWARE, 2.5) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(EXC_BREAKPOINT, 2.6) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(EXC_SYSCALL, 2.7) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(EXC_MACH_SYSCALL, 2.8) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(EXC_RPC_ALERT, 2.9) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(EXC_CRASH, 2.10) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(EXC_RESOURCE, 2.11) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(EXC_GUARD, 2.12) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(EXC_CORPSE_NOTIFY, 2.13) {
+    
+}
+
+#pragma mark - Unix Signals
+
+
+BG_CRASH_DEFINE_RAISE(SIGHUP, 3.1) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGINT, 3.2) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGQUIT, 3.3) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGILL, 3.4) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGTRAP, 3.5) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGABRT, 3.6) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGPOLL, 3.7) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGIOT, 3.8) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGEMT, 3.9) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGFPE, 3.10) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGKILL, 3.11) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGBUS, 3.12) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGSEGV, 3.13) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGSYS, 3.14) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGPIPE, 3.15) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGALRM, 3.16) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGTERM, 3.17) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGURG, 3.18) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGSTOP, 3.19) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGTSTP, 3.20) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGCONT, 3.21) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGCHLD, 3.22) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGTTIN, 3.23) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGTTOU, 3.24) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGIO, 3.25) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGXCPU, 3.26) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGXFSZ, 3.27) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGVTALRM, 3.28) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGPROF, 3.29) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGWINCH, 3.30) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGINFO, 3.31) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGUSR1, 3.32) {
+    
+}
+
+BG_CRASH_DEFINE_RAISE(SIGUSR2, 3.33) {
+    
 }
 
 #pragma mark - Core Data Getter
@@ -380,7 +629,7 @@ BG_CRASH_DEFINE_RAISE(Arithmetic, 2.0) {
     return NSLocalizedStringFromTable(@"Cancel", nil, @"取消");}
 - (NSString *)textSelectCrashType {
     return NSLocalizedStringFromTable(@"Select Crash Type", nil, @"选择崩溃类型");}
-
+// NSException
 BG_CRASH_DEFINE_TEXT(NSGenericException) {
     return NSLocalizedStringFromTable(@"NSGenericException", nil, @"OC程序异常");}
 BG_CRASH_DEFINE_TEXT(NSRangeException) {
@@ -409,17 +658,108 @@ BG_CRASH_DEFINE_TEXT(NSPortReceiveException) {
     return NSLocalizedStringFromTable(@"NSPortReceiveException", nil, @"OC程序异常");}
 
 BG_CRASH_DEFINE_TEXT(NSOldStyleException) {
-return NSLocalizedStringFromTable(@"NSOldStyleException", nil, @"OC程序异常");}
+    return NSLocalizedStringFromTable(@"NSOldStyleException", nil, @"OC程序异常");}
 BG_CRASH_DEFINE_TEXT(NSInconsistentArchiveException) {
-return NSLocalizedStringFromTable(@"NSInconsistentArchiveException", nil, @"OC程序异常");}
+    return NSLocalizedStringFromTable(@"NSInconsistentArchiveException", nil, @"OC程序异常");}
 BG_CRASH_DEFINE_TEXT(NSUndefinedKeyException) {
-return NSLocalizedStringFromTable(@"NSUndefinedKeyException", nil, @"OC程序异常");}
+    return NSLocalizedStringFromTable(@"NSUndefinedKeyException", nil, @"OC程序异常");}
 BG_CRASH_DEFINE_TEXT(NSCharacterConversionException) {
-return NSLocalizedStringFromTable(@"NSCharacterConversionException", nil, @"OC程序异常");}
+    return NSLocalizedStringFromTable(@"NSCharacterConversionException", nil, @"OC程序异常");}
 BG_CRASH_DEFINE_TEXT(NSParseErrorException) {
-return NSLocalizedStringFromTable(@"NSParseErrorException", nil, @"OC程序异常");}
-
-- (NSString *)textArithmetic {
-    return NSLocalizedStringFromTable(@"Arithmetic", nil, @"运算");}
+    return NSLocalizedStringFromTable(@"NSParseErrorException", nil, @"OC程序异常");}
+// Mach
+BG_CRASH_DEFINE_TEXT(EXC_BAD_ACCESS) {
+    return NSLocalizedStringFromTable(@"EXC_BAD_ACCESS", nil, @"非法内存访问");}
+BG_CRASH_DEFINE_TEXT(EXC_BAD_INSTRUCTION) {
+    return NSLocalizedStringFromTable(@"EXC_BAD_INSTRUCTION", nil, @"非法指令运行");}
+BG_CRASH_DEFINE_TEXT(EXC_ARITHMETIC) {
+    return NSLocalizedStringFromTable(@"EXC_ARITHMETIC", nil, @"运算");}
+BG_CRASH_DEFINE_TEXT(EXC_EMULATION) {
+    return NSLocalizedStringFromTable(@"EXC_EMULATION", nil, @"");}
+BG_CRASH_DEFINE_TEXT(EXC_SOFTWARE) {
+    return NSLocalizedStringFromTable(@"EXC_SOFTWARE", nil, @"");}
+BG_CRASH_DEFINE_TEXT(EXC_BREAKPOINT) {
+    return NSLocalizedStringFromTable(@"EXC_BREAKPOINT", nil, @"");}
+BG_CRASH_DEFINE_TEXT(EXC_SYSCALL) {
+    return NSLocalizedStringFromTable(@"EXC_SYSCALL", nil, @"");}
+BG_CRASH_DEFINE_TEXT(EXC_MACH_SYSCALL) {
+    return NSLocalizedStringFromTable(@"EXC_MACH_SYSCALL", nil, @"");}
+BG_CRASH_DEFINE_TEXT(EXC_RPC_ALERT) {
+    return NSLocalizedStringFromTable(@"EXC_RPC_ALERT", nil, @"");}
+BG_CRASH_DEFINE_TEXT(EXC_CRASH) {
+    return NSLocalizedStringFromTable(@"EXC_CRASH", nil, @"");}
+BG_CRASH_DEFINE_TEXT(EXC_RESOURCE) {
+    return NSLocalizedStringFromTable(@"EXC_RESOURCE", nil, @"");}
+BG_CRASH_DEFINE_TEXT(EXC_GUARD) {
+    return NSLocalizedStringFromTable(@"EXC_GUARD", nil, @"");}
+BG_CRASH_DEFINE_TEXT(EXC_CORPSE_NOTIFY) {
+    return NSLocalizedStringFromTable(@"EXC_CORPSE_NOTIFY", nil, @"");}
+// Unix Signals
+BG_CRASH_DEFINE_TEXT(SIGHUP) {
+return NSLocalizedStringFromTable(@"SIGHUP", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGINT) {
+return NSLocalizedStringFromTable(@"SIGINT", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGQUIT) {
+return NSLocalizedStringFromTable(@"SIGQUIT", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGILL) {
+return NSLocalizedStringFromTable(@"SIGILL", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGTRAP) {
+return NSLocalizedStringFromTable(@"SIGTRAP", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGABRT) {
+return NSLocalizedStringFromTable(@"SIGABRT", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGPOLL) {
+return NSLocalizedStringFromTable(@"SIGPOLL", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGIOT) {
+return NSLocalizedStringFromTable(@"SIGIOT", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGEMT) {
+return NSLocalizedStringFromTable(@"SIGEMT", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGFPE) {
+return NSLocalizedStringFromTable(@"SIGFPE", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGKILL) {
+return NSLocalizedStringFromTable(@"SIGKILL", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGBUS) {
+return NSLocalizedStringFromTable(@"SIGBUS", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGSEGV) {
+return NSLocalizedStringFromTable(@"SIGSEGV", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGSYS) {
+return NSLocalizedStringFromTable(@"SIGSYS", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGPIPE) {
+return NSLocalizedStringFromTable(@"SIGPIPE", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGALRM) {
+return NSLocalizedStringFromTable(@"SIGALRM", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGTERM) {
+return NSLocalizedStringFromTable(@"SIGTERM", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGURG) {
+return NSLocalizedStringFromTable(@"SIGURG", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGSTOP) {
+return NSLocalizedStringFromTable(@"SIGSTOP", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGTSTP) {
+return NSLocalizedStringFromTable(@"SIGTSTP", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGCONT) {
+return NSLocalizedStringFromTable(@"SIGCONT", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGCHLD) {
+return NSLocalizedStringFromTable(@"SIGCHLD", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGTTIN) {
+return NSLocalizedStringFromTable(@"SIGTTIN", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGTTOU) {
+return NSLocalizedStringFromTable(@"SIGTTOU", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGIO) {
+return NSLocalizedStringFromTable(@"SIGIO", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGXCPU) {
+return NSLocalizedStringFromTable(@"SIGXCPU", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGXFSZ) {
+return NSLocalizedStringFromTable(@"SIGXFSZ", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGVTALRM) {
+return NSLocalizedStringFromTable(@"SIGVTALRM", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGPROF) {
+return NSLocalizedStringFromTable(@"SIGPROF", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGWINCH) {
+return NSLocalizedStringFromTable(@"SIGWINCH", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGINFO) {
+return NSLocalizedStringFromTable(@"SIGINFO", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGUSR1) {
+return NSLocalizedStringFromTable(@"SIGUSR1", nil, @"");}
+BG_CRASH_DEFINE_TEXT(SIGUSR2) {
+return NSLocalizedStringFromTable(@"SIGUSR2", nil, @"");}
 
 @end
