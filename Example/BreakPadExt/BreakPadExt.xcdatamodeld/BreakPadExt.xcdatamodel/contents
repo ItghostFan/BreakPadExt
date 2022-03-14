@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Group" representedClassName="Group" syncable="YES" codeGenerationType="class">
+        <attribute name="group_id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="GroupMembers" representedClassName="GroupMembers" syncable="YES" codeGenerationType="class">
+        <attribute name="group_id" optional="YES" attributeType="String"/>
+        <attribute name="user_id" optional="YES" attributeType="String"/>
+        <relationship name="group_connect" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group"/>
+        <relationship name="persion_connect" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="user_id" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Group" positionX="98.48529052734375" positionY="-183.8877563476562" width="128" height="73"/>
+        <element name="GroupMembers" positionX="408.824951171875" positionY="-111.7390747070312" width="128" height="89"/>
+    </elements>
+</model>

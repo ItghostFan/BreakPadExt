@@ -7,12 +7,10 @@ target 'BreakPadExt_Example' do
   pod 'ReactiveObjC'
   pod 'Masonry'
 
-  target 'BreakPadExt_Tests' do
+  target 'BreakPadExtTests' do
     inherit! :search_paths
-
-    pod 'Specta'
-    pod 'Expecta'
-    pod 'FBSnapshotTestCase'
-    pod 'Expecta+Snapshots'
+  end
+  target 'BreakPadExtUITests' do
+    inherit! :search_paths
   end
 end

@@ -3,212 +3,231 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C44C1B9E820FC151854957F /* Pods_BreakPadExt_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FB2D5C442B0FEEF21B98A6 /* Pods_BreakPadExt_Example.framework */; };
-		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
-		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
-		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
-		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
-		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
-		6003F59E195388D20070C39A /* BPCrashAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* BPCrashAppDelegate.mm */; };
-		6003F5A7195388D20070C39A /* BPCrashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* BPCrashViewController.m */; };
-		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
-		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
-		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
-		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
-		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		777D1105A9CAF484540FBC1F /* Pods_BreakPadExt_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D363008B9E3517F859D7001 /* Pods_BreakPadExt_Tests.framework */; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		1C630A9764A82E05766626C1 /* Pods_BreakPadExtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3B86BE37533A5ADC5A2141 /* Pods_BreakPadExtUITests.framework */; };
+		78F6E2F127DB4D9F004A407B /* BPCrashAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E2F027DB4D9F004A407B /* BPCrashAppDelegate.m */; };
+		78F6E2F427DB4D9F004A407B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E2F327DB4D9F004A407B /* SceneDelegate.m */; };
+		78F6E2F727DB4D9F004A407B /* BPCrashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E2F627DB4D9F004A407B /* BPCrashViewController.m */; };
+		78F6E2FA27DB4D9F004A407B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F6E2F827DB4D9F004A407B /* Main.storyboard */; };
+		78F6E2FD27DB4D9F004A407B /* BreakPadExt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E2FB27DB4D9F004A407B /* BreakPadExt.xcdatamodeld */; };
+		78F6E2FF27DB4DA1004A407B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F6E2FE27DB4DA1004A407B /* Assets.xcassets */; };
+		78F6E30227DB4DA1004A407B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F6E30027DB4DA1004A407B /* LaunchScreen.storyboard */; };
+		78F6E30527DB4DA1004A407B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E30427DB4DA1004A407B /* main.m */; };
+		78F6E30F27DB4DA1004A407B /* BreakPadExtTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E30E27DB4DA1004A407B /* BreakPadExtTests.m */; };
+		78F6E31927DB4DA1004A407B /* BreakPadExtUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E31827DB4DA1004A407B /* BreakPadExtUITests.m */; };
+		78F6E31B27DB4DA1004A407B /* BreakPadExtUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E31A27DB4DA1004A407B /* BreakPadExtUITestsLaunchTests.m */; };
+		78F6E33C27DEE353004A407B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F6E33B27DEE353004A407B /* CoreData.framework */; };
+		7DF187967F82AD87C403E6BA /* Pods_BreakPadExtTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F045EA7BD67E0B0754E9BF7 /* Pods_BreakPadExtTests.framework */; };
+		B8BF34F30EB31CD5C576105A /* Pods_BreakPadExt_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333ACB4CA8D1D123E21649C2 /* Pods_BreakPadExt_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6003F5B3195388D20070C39A /* PBXContainerItemProxy */ = {
+		78F6E30B27DB4DA1004A407B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			containerPortal = 78F6E2E427DB4D9F004A407B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6003F589195388D20070C39A;
+			remoteGlobalIDString = 78F6E2EB27DB4D9F004A407B;
+			remoteInfo = BreakPadExt;
+		};
+		78F6E31527DB4DA1004A407B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78F6E2E427DB4D9F004A407B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78F6E2EB27DB4D9F004A407B;
 			remoteInfo = BreakPadExt;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		097F95B0D9C7240190A87E64 /* Pods-BreakPadExt_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExt_Example.debug.xcconfig"; path = "Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		14D3048D375ABC19BA6F0D2D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		2D363008B9E3517F859D7001 /* Pods_BreakPadExt_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPadExt_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		39ECE8F21165A5D575499083 /* Pods-BreakPadExt_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExt_Example.release.xcconfig"; path = "Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example.release.xcconfig"; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* BreakPadExt_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakPadExt_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6003F595195388D20070C39A /* BreakPadExt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BreakPadExt-Info.plist"; sourceTree = "<group>"; };
-		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6003F59B195388D20070C39A /* BreakPadExt-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BreakPadExt-Prefix.pch"; sourceTree = "<group>"; };
-		6003F59C195388D20070C39A /* BPCrashAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCrashAppDelegate.h; sourceTree = "<group>"; };
-		6003F59D195388D20070C39A /* BPCrashAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BPCrashAppDelegate.mm; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* BPCrashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCrashViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* BPCrashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCrashViewController.m; sourceTree = "<group>"; };
-		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6003F5AE195388D20070C39A /* BreakPadExt_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakPadExt_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
-		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
-		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7871E4ED31AC42E1D1ABFE08 /* BreakPadExt.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BreakPadExt.podspec; path = ../BreakPadExt.podspec; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		93FB2D5C442B0FEEF21B98A6 /* Pods_BreakPadExt_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPadExt_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B885B580771362308CBB2D2B /* Pods-BreakPadExt_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExt_Tests.debug.xcconfig"; path = "Target Support Files/Pods-BreakPadExt_Tests/Pods-BreakPadExt_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		BD725218F0D7490A00957B40 /* Pods-BreakPadExt_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExt_Tests.release.xcconfig"; path = "Target Support Files/Pods-BreakPadExt_Tests/Pods-BreakPadExt_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C0EAEBD781ED3A8C86194DBE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		009A07E3F7CAF11D33CA3575 /* Pods-BreakPadExtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExtTests.debug.xcconfig"; path = "Target Support Files/Pods-BreakPadExtTests/Pods-BreakPadExtTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1CEE69BB8D00A97EBDD6E525 /* Pods-BreakPadExtUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExtUITests.debug.xcconfig"; path = "Target Support Files/Pods-BreakPadExtUITests/Pods-BreakPadExtUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2F045EA7BD67E0B0754E9BF7 /* Pods_BreakPadExtTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPadExtTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31053080C868CC2CDD29C3C4 /* Pods-BreakPadExtUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExtUITests.release.xcconfig"; path = "Target Support Files/Pods-BreakPadExtUITests/Pods-BreakPadExtUITests.release.xcconfig"; sourceTree = "<group>"; };
+		333ACB4CA8D1D123E21649C2 /* Pods_BreakPadExt_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPadExt_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B3B86BE37533A5ADC5A2141 /* Pods_BreakPadExtUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPadExtUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D16C4B44C8CDC7CCD7C3EB /* Pods-BreakPadExt_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExt_Example.release.xcconfig"; path = "Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example.release.xcconfig"; sourceTree = "<group>"; };
+		75E568ED717FB8B9E3EFBBA8 /* Pods-BreakPadExtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExtTests.release.xcconfig"; path = "Target Support Files/Pods-BreakPadExtTests/Pods-BreakPadExtTests.release.xcconfig"; sourceTree = "<group>"; };
+		78F6E2EC27DB4D9F004A407B /* BreakPadExt_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakPadExt_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78F6E2EF27DB4D9F004A407B /* BPCrashAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCrashAppDelegate.h; sourceTree = "<group>"; };
+		78F6E2F027DB4D9F004A407B /* BPCrashAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCrashAppDelegate.m; sourceTree = "<group>"; };
+		78F6E2F227DB4D9F004A407B /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		78F6E2F327DB4D9F004A407B /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		78F6E2F527DB4D9F004A407B /* BPCrashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCrashViewController.h; sourceTree = "<group>"; };
+		78F6E2F627DB4D9F004A407B /* BPCrashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCrashViewController.m; sourceTree = "<group>"; };
+		78F6E2F927DB4D9F004A407B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		78F6E2FC27DB4D9F004A407B /* BreakPadExt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BreakPadExt.xcdatamodel; sourceTree = "<group>"; };
+		78F6E2FE27DB4DA1004A407B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		78F6E30127DB4DA1004A407B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		78F6E30327DB4DA1004A407B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78F6E30427DB4DA1004A407B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		78F6E30A27DB4DA1004A407B /* BreakPadExtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakPadExtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78F6E30E27DB4DA1004A407B /* BreakPadExtTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BreakPadExtTests.m; sourceTree = "<group>"; };
+		78F6E31427DB4DA1004A407B /* BreakPadExtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakPadExtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78F6E31827DB4DA1004A407B /* BreakPadExtUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BreakPadExtUITests.m; sourceTree = "<group>"; };
+		78F6E31A27DB4DA1004A407B /* BreakPadExtUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BreakPadExtUITestsLaunchTests.m; sourceTree = "<group>"; };
+		78F6E33B27DEE353004A407B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		78F6E33D27DEE4A8004A407B /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataProperties.m"; sourceTree = "<group>"; };
+		78F6E33E27DEE4A8004A407B /* GroupMembers+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GroupMembers+CoreDataProperties.h"; sourceTree = "<group>"; };
+		78F6E33F27DEE4A8004A407B /* GroupMembers+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GroupMembers+CoreDataClass.h"; sourceTree = "<group>"; };
+		78F6E34027DEE4A8004A407B /* Group+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Group+CoreDataProperties.m"; sourceTree = "<group>"; };
+		78F6E34127DEE4A8004A407B /* Person+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataClass.h"; sourceTree = "<group>"; };
+		78F6E34227DEE4A8004A407B /* Group+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Group+CoreDataProperties.h"; sourceTree = "<group>"; };
+		78F6E34327DEE4A8004A407B /* GroupMembers+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GroupMembers+CoreDataProperties.m"; sourceTree = "<group>"; };
+		78F6E34427DEE4A8004A407B /* Person+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataClass.m"; sourceTree = "<group>"; };
+		78F6E34527DEE4A8004A407B /* Person+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataProperties.h"; sourceTree = "<group>"; };
+		78F6E34627DEE4A8004A407B /* Group+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Group+CoreDataClass.m"; sourceTree = "<group>"; };
+		78F6E34727DEE4A9004A407B /* Group+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Group+CoreDataClass.h"; sourceTree = "<group>"; };
+		78F6E34827DEE4A9004A407B /* GroupMembers+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GroupMembers+CoreDataClass.m"; sourceTree = "<group>"; };
+		C30C1EAAE5D318406FDB5B29 /* Pods-BreakPadExt_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExt_Example.debug.xcconfig"; path = "Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6003F587195388D20070C39A /* Frameworks */ = {
+		78F6E2E927DB4D9F004A407B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
-				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
-				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				2C44C1B9E820FC151854957F /* Pods_BreakPadExt_Example.framework in Frameworks */,
+				B8BF34F30EB31CD5C576105A /* Pods_BreakPadExt_Example.framework in Frameworks */,
+				78F6E33C27DEE353004A407B /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6003F5AB195388D20070C39A /* Frameworks */ = {
+		78F6E30727DB4DA1004A407B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
-				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
-				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				777D1105A9CAF484540FBC1F /* Pods_BreakPadExt_Tests.framework in Frameworks */,
+				7DF187967F82AD87C403E6BA /* Pods_BreakPadExtTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78F6E31127DB4DA1004A407B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C630A9764A82E05766626C1 /* Pods_BreakPadExtUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07D422CFFE2F02B3C17E5A9F /* Pods */ = {
+		133644699843C4C022B36994 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				097F95B0D9C7240190A87E64 /* Pods-BreakPadExt_Example.debug.xcconfig */,
-				39ECE8F21165A5D575499083 /* Pods-BreakPadExt_Example.release.xcconfig */,
-				B885B580771362308CBB2D2B /* Pods-BreakPadExt_Tests.debug.xcconfig */,
-				BD725218F0D7490A00957B40 /* Pods-BreakPadExt_Tests.release.xcconfig */,
+				009A07E3F7CAF11D33CA3575 /* Pods-BreakPadExtTests.debug.xcconfig */,
+				75E568ED717FB8B9E3EFBBA8 /* Pods-BreakPadExtTests.release.xcconfig */,
+				1CEE69BB8D00A97EBDD6E525 /* Pods-BreakPadExtUITests.debug.xcconfig */,
+				31053080C868CC2CDD29C3C4 /* Pods-BreakPadExtUITests.release.xcconfig */,
+				C30C1EAAE5D318406FDB5B29 /* Pods-BreakPadExt_Example.debug.xcconfig */,
+				53D16C4B44C8CDC7CCD7C3EB /* Pods-BreakPadExt_Example.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		6003F581195388D10070C39A = {
+		78F6E2E327DB4D9F004A407B = {
 			isa = PBXGroup;
 			children = (
-				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
-				6003F593195388D20070C39A /* Example for BreakPadExt */,
-				6003F5B5195388D20070C39A /* Tests */,
-				6003F58C195388D20070C39A /* Frameworks */,
-				6003F58B195388D20070C39A /* Products */,
-				07D422CFFE2F02B3C17E5A9F /* Pods */,
+				78F6E2EE27DB4D9F004A407B /* BreakPadExt */,
+				78F6E30D27DB4DA1004A407B /* BreakPadExtTests */,
+				78F6E31727DB4DA1004A407B /* BreakPadExtUITests */,
+				78F6E2ED27DB4D9F004A407B /* Products */,
+				133644699843C4C022B36994 /* Pods */,
+				90434CD48AF074990892855E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		6003F58B195388D20070C39A /* Products */ = {
+		78F6E2ED27DB4D9F004A407B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* BreakPadExt_Example.app */,
-				6003F5AE195388D20070C39A /* BreakPadExt_Tests.xctest */,
+				78F6E2EC27DB4D9F004A407B /* BreakPadExt_Example.app */,
+				78F6E30A27DB4DA1004A407B /* BreakPadExtTests.xctest */,
+				78F6E31427DB4DA1004A407B /* BreakPadExtUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6003F58C195388D20070C39A /* Frameworks */ = {
+		78F6E2EE27DB4D9F004A407B /* BreakPadExt */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58D195388D20070C39A /* Foundation.framework */,
-				6003F58F195388D20070C39A /* CoreGraphics.framework */,
-				6003F591195388D20070C39A /* UIKit.framework */,
-				6003F5AF195388D20070C39A /* XCTest.framework */,
-				93FB2D5C442B0FEEF21B98A6 /* Pods_BreakPadExt_Example.framework */,
-				2D363008B9E3517F859D7001 /* Pods_BreakPadExt_Tests.framework */,
+				78F6E32827DEDFF8004A407B /* CoreData */,
+				78F6E2EF27DB4D9F004A407B /* BPCrashAppDelegate.h */,
+				78F6E2F027DB4D9F004A407B /* BPCrashAppDelegate.m */,
+				78F6E2F227DB4D9F004A407B /* SceneDelegate.h */,
+				78F6E2F327DB4D9F004A407B /* SceneDelegate.m */,
+				78F6E2F527DB4D9F004A407B /* BPCrashViewController.h */,
+				78F6E2F627DB4D9F004A407B /* BPCrashViewController.m */,
+				78F6E2F827DB4D9F004A407B /* Main.storyboard */,
+				78F6E2FE27DB4DA1004A407B /* Assets.xcassets */,
+				78F6E30027DB4DA1004A407B /* LaunchScreen.storyboard */,
+				78F6E30327DB4DA1004A407B /* Info.plist */,
+				78F6E30427DB4DA1004A407B /* main.m */,
+				78F6E2FB27DB4D9F004A407B /* BreakPadExt.xcdatamodeld */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6003F593195388D20070C39A /* Example for BreakPadExt */ = {
-			isa = PBXGroup;
-			children = (
-				6003F59C195388D20070C39A /* BPCrashAppDelegate.h */,
-				6003F59D195388D20070C39A /* BPCrashAppDelegate.mm */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* BPCrashViewController.h */,
-				6003F5A6195388D20070C39A /* BPCrashViewController.m */,
-				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
-				6003F594195388D20070C39A /* Supporting Files */,
-			);
-			name = "Example for BreakPadExt";
 			path = BreakPadExt;
 			sourceTree = "<group>";
 		};
-		6003F594195388D20070C39A /* Supporting Files */ = {
+		78F6E30D27DB4DA1004A407B /* BreakPadExtTests */ = {
 			isa = PBXGroup;
 			children = (
-				6003F595195388D20070C39A /* BreakPadExt-Info.plist */,
-				6003F596195388D20070C39A /* InfoPlist.strings */,
-				6003F599195388D20070C39A /* main.m */,
-				6003F59B195388D20070C39A /* BreakPadExt-Prefix.pch */,
+				78F6E30E27DB4DA1004A407B /* BreakPadExtTests.m */,
 			);
-			name = "Supporting Files";
+			path = BreakPadExtTests;
 			sourceTree = "<group>";
 		};
-		6003F5B5195388D20070C39A /* Tests */ = {
+		78F6E31727DB4DA1004A407B /* BreakPadExtUITests */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5BB195388D20070C39A /* Tests.m */,
-				6003F5B6195388D20070C39A /* Supporting Files */,
+				78F6E31827DB4DA1004A407B /* BreakPadExtUITests.m */,
+				78F6E31A27DB4DA1004A407B /* BreakPadExtUITestsLaunchTests.m */,
 			);
-			path = Tests;
+			path = BreakPadExtUITests;
 			sourceTree = "<group>";
 		};
-		6003F5B6195388D20070C39A /* Supporting Files */ = {
+		78F6E32827DEDFF8004A407B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5B7195388D20070C39A /* Tests-Info.plist */,
-				6003F5B8195388D20070C39A /* InfoPlist.strings */,
-				606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */,
+				78F6E34727DEE4A9004A407B /* Group+CoreDataClass.h */,
+				78F6E34627DEE4A8004A407B /* Group+CoreDataClass.m */,
+				78F6E34227DEE4A8004A407B /* Group+CoreDataProperties.h */,
+				78F6E34027DEE4A8004A407B /* Group+CoreDataProperties.m */,
+				78F6E33F27DEE4A8004A407B /* GroupMembers+CoreDataClass.h */,
+				78F6E34827DEE4A9004A407B /* GroupMembers+CoreDataClass.m */,
+				78F6E33E27DEE4A8004A407B /* GroupMembers+CoreDataProperties.h */,
+				78F6E34327DEE4A8004A407B /* GroupMembers+CoreDataProperties.m */,
+				78F6E34127DEE4A8004A407B /* Person+CoreDataClass.h */,
+				78F6E34427DEE4A8004A407B /* Person+CoreDataClass.m */,
+				78F6E34527DEE4A8004A407B /* Person+CoreDataProperties.h */,
+				78F6E33D27DEE4A8004A407B /* Person+CoreDataProperties.m */,
 			);
-			name = "Supporting Files";
+			path = CoreData;
 			sourceTree = "<group>";
 		};
-		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
+		90434CD48AF074990892855E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7871E4ED31AC42E1D1ABFE08 /* BreakPadExt.podspec */,
-				14D3048D375ABC19BA6F0D2D /* README.md */,
-				C0EAEBD781ED3A8C86194DBE /* LICENSE */,
+				78F6E33B27DEE353004A407B /* CoreData.framework */,
+				2F045EA7BD67E0B0754E9BF7 /* Pods_BreakPadExtTests.framework */,
+				4B3B86BE37533A5ADC5A2141 /* Pods_BreakPadExtUITests.framework */,
+				333ACB4CA8D1D123E21649C2 /* Pods_BreakPadExt_Example.framework */,
 			);
-			name = "Podspec Metadata";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6003F589195388D20070C39A /* BreakPadExt_Example */ = {
+		78F6E2EB27DB4D9F004A407B /* BreakPadExt_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "BreakPadExt_Example" */;
+			buildConfigurationList = 78F6E31E27DB4DA1004A407B /* Build configuration list for PBXNativeTarget "BreakPadExt_Example" */;
 			buildPhases = (
-				940433319B010F25AB5EF24A /* [CP] Check Pods Manifest.lock */,
-				78F6E2C427D89952004A407B /* Run Script Fetch Google BreakPad */,
-				6003F586195388D20070C39A /* Sources */,
-				6003F587195388D20070C39A /* Frameworks */,
-				6003F588195388D20070C39A /* Resources */,
-				C1CC4D5C2ADAEC37704D2B9C /* [CP] Embed Pods Frameworks */,
+				121DABAAD0A09FF703EB08DB /* [CP] Check Pods Manifest.lock */,
+				78F6E32727DB5008004A407B /* Run Script Fetch Google BreakPad */,
+				78F6E2E827DB4D9F004A407B /* Sources */,
+				78F6E2E927DB4D9F004A407B /* Frameworks */,
+				78F6E2EA27DB4D9F004A407B /* Resources */,
+				17D702AA930A9E7170175B3B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,152 +235,118 @@
 			);
 			name = BreakPadExt_Example;
 			productName = BreakPadExt;
-			productReference = 6003F58A195388D20070C39A /* BreakPadExt_Example.app */;
+			productReference = 78F6E2EC27DB4D9F004A407B /* BreakPadExt_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6003F5AD195388D20070C39A /* BreakPadExt_Tests */ = {
+		78F6E30927DB4DA1004A407B /* BreakPadExtTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "BreakPadExt_Tests" */;
+			buildConfigurationList = 78F6E32127DB4DA1004A407B /* Build configuration list for PBXNativeTarget "BreakPadExtTests" */;
 			buildPhases = (
-				432C4F81F50E98EA49CA0FD2 /* [CP] Check Pods Manifest.lock */,
-				6003F5AA195388D20070C39A /* Sources */,
-				6003F5AB195388D20070C39A /* Frameworks */,
-				6003F5AC195388D20070C39A /* Resources */,
-				1AB2BD251541205737C4827E /* [CP] Embed Pods Frameworks */,
+				9C23CBC5BA207B8D12F779C7 /* [CP] Check Pods Manifest.lock */,
+				78F6E30627DB4DA1004A407B /* Sources */,
+				78F6E30727DB4DA1004A407B /* Frameworks */,
+				78F6E30827DB4DA1004A407B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6003F5B4195388D20070C39A /* PBXTargetDependency */,
+				78F6E30C27DB4DA1004A407B /* PBXTargetDependency */,
 			);
-			name = BreakPadExt_Tests;
+			name = BreakPadExtTests;
 			productName = BreakPadExtTests;
-			productReference = 6003F5AE195388D20070C39A /* BreakPadExt_Tests.xctest */;
+			productReference = 78F6E30A27DB4DA1004A407B /* BreakPadExtTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		78F6E31327DB4DA1004A407B /* BreakPadExtUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78F6E32427DB4DA1004A407B /* Build configuration list for PBXNativeTarget "BreakPadExtUITests" */;
+			buildPhases = (
+				82D6EF158538B45E4B91D7C8 /* [CP] Check Pods Manifest.lock */,
+				78F6E31027DB4DA1004A407B /* Sources */,
+				78F6E31127DB4DA1004A407B /* Frameworks */,
+				78F6E31227DB4DA1004A407B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78F6E31627DB4DA1004A407B /* PBXTargetDependency */,
+			);
+			name = BreakPadExtUITests;
+			productName = BreakPadExtUITests;
+			productReference = 78F6E31427DB4DA1004A407B /* BreakPadExtUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6003F582195388D10070C39A /* Project object */ = {
+		78F6E2E427DB4D9F004A407B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = BPCrash;
-				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = ItghostFan;
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					6003F5AD195388D20070C39A = {
-						TestTargetID = 6003F589195388D20070C39A;
+					78F6E2EB27DB4D9F004A407B = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					78F6E30927DB4DA1004A407B = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 78F6E2EB27DB4D9F004A407B;
+					};
+					78F6E31327DB4DA1004A407B = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 78F6E2EB27DB4D9F004A407B;
 					};
 				};
 			};
-			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "BreakPadExt" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 78F6E2E727DB4D9F004A407B /* Build configuration list for PBXProject "BreakPadExt" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
-			mainGroup = 6003F581195388D10070C39A;
-			productRefGroup = 6003F58B195388D20070C39A /* Products */;
+			mainGroup = 78F6E2E327DB4D9F004A407B;
+			productRefGroup = 78F6E2ED27DB4D9F004A407B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6003F589195388D20070C39A /* BreakPadExt_Example */,
-				6003F5AD195388D20070C39A /* BreakPadExt_Tests */,
+				78F6E2EB27DB4D9F004A407B /* BreakPadExt_Example */,
+				78F6E30927DB4DA1004A407B /* BreakPadExtTests */,
+				78F6E31327DB4DA1004A407B /* BreakPadExtUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6003F588195388D20070C39A /* Resources */ = {
+		78F6E2EA27DB4D9F004A407B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
-				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
-				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				78F6E30227DB4DA1004A407B /* LaunchScreen.storyboard in Resources */,
+				78F6E2FF27DB4DA1004A407B /* Assets.xcassets in Resources */,
+				78F6E2FA27DB4D9F004A407B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6003F5AC195388D20070C39A /* Resources */ = {
+		78F6E30827DB4DA1004A407B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78F6E31227DB4DA1004A407B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1AB2BD251541205737C4827E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BreakPadExt_Tests/Pods-BreakPadExt_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Expecta/Expecta.framework",
-				"${BUILT_PRODUCTS_DIR}/Expecta+Snapshots/Expecta_Snapshots.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
-				"${BUILT_PRODUCTS_DIR}/Specta/Specta.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Expecta.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Expecta_Snapshots.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Specta.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BreakPadExt_Tests/Pods-BreakPadExt_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		432C4F81F50E98EA49CA0FD2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BreakPadExt_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		78F6E2C427D89952004A407B /* Run Script Fetch Google BreakPad */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script Fetch Google BreakPad";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexamplePath=`pwd`\nlogPath=$examplePath\"/fetch_google_breakpad.log\"\necho $examplePath >> $logPath\ncd ..\npodPath=`pwd`\ngit submodule add -b chrome_99 -f --name breakpad https://github.com/google/breakpad.git\n\nclassesPath=$podPath\"/BreakPadExt/Classes\"\n\ncd $classesPath\n\nbreakpadPathes=(\n\"breakpad\"\n\"breakpad/src\"\n\"breakpad/src/client\"\n\"breakpad/src/client/ios\"\n\"breakpad/src/client/ios/handler\"\n\"breakpad/src/client/apple\"\n\"breakpad/src/client/apple/Framework\"\n\"breakpad/src/client/mac\"\n\"breakpad/src/client/mac/crash_generation\"\n\"breakpad/src/client/mac/handler\"\n\"breakpad/src/client/mac/sender\"\n\"breakpad/src/common\"\n\"breakpad/src/common/linux\"\n\"breakpad/src/common/mac\"\n\"breakpad/src/google_breakpad\"\n\"breakpad/src/google_breakpad/common\"\n)\nfor breakpadPath in ${breakpadPathes[@]}\ndo\n    mkdir $breakpadPath\ndone\n\nbreakpadFiles=(\n\"breakpad/src/client/minidump_file_writer-inl.h\"\n\"breakpad/src/client/minidump_file_writer.h\"\n\"breakpad/src/client/ios/Breakpad.h\"\n\"breakpad/src/client/ios/BreakpadController.h\"\n\"breakpad/src/client/ios/handler/ios_exception_minidump_generator.h\"\n\"breakpad/src/client/apple/Framework/BreakpadDefines.h\"\n\"breakpad/src/client/mac/handler/ucontext_compat.h\"\n\"breakpad/src/client/mac/handler/breakpad_nlist_64.h\"\n\"breakpad/src/client/mac/handler/dynamic_images.h\"\n\"breakpad/src/client/mac/handler/exception_handler.h\"\n\"breakpad/src/client/mac/handler/minidump_generator.h\"\n\"breakpad/src/client/mac/handler/protected_memory_allocator.h\"\n\"breakpad/src/client/mac/handler/mach_vm_compat.h\"\n\"breakpad/src/client/mac/crash_generation/ConfigFile.h\"\n\"breakpad/src/client/mac/sender/uploader.h\"\n\"breakpad/src/common/basictypes.h\"\n\"breakpad/src/common/convert_UTF.h\"\n\"breakpad/src/common/md5.h\"\n\"breakpad/src/common/memory.h\"\n\"breakpad/src/common/scoped_ptr.h\"\n\"breakpad/src/common/string_conversion.h\"\n\"breakpad/src/common/simple_string_dictionary.h\"\n\"breakpad/src/common/using_std_string.h\"\n\"breakpad/src/common/linux/linux_libc_support.h\"\n\"breakpad/src/common/mac/byteswap.h\"\n\"breakpad/src/common/mac/GTMDefines.h\"\n\"breakpad/src/common/mac/GTMLogger.h\"\n\"breakpad/src/common/mac/HTTPMultipartUpload.h\"\n\"breakpad/src/common/mac/file_id.h\"\n\"breakpad/src/common/mac/macho_id.h\"\n\"breakpad/src/common/mac/macho_utilities.h\"\n\"breakpad/src/common/mac/macho_walker.h\"\n\"breakpad/src/common/mac/scoped_task_suspend-inl.h\"\n\"breakpad/src/common/mac/string_utilities.h\"\n\"breakpad/src/google_breakpad/common/minidump_format.h\"\n\"breakpad/src/google_breakpad/common/minidump_size.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_mac.h\"\n\"breakpad/src/google_breakpad/common/breakpad_types.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_amd64.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_arm.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_arm64.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_mips.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_ppc.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_ppc64.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_sparc.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_x86.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_linux.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_ps3.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_solaris.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_win32.h\"\n\"breakpad/src/client/minidump_file_writer.cc\"\n\"breakpad/src/client/ios/Breakpad.mm\"\n\"breakpad/src/client/ios/BreakpadController.mm\"\n\"breakpad/src/client/ios/handler/ios_exception_minidump_generator.mm\"\n\"breakpad/src/client/mac/crash_generation/ConfigFile.mm\"\n\"breakpad/src/client/mac/handler/breakpad_nlist_64.cc\"\n\"breakpad/src/client/mac/handler/dynamic_images.cc\"\n\"breakpad/src/client/mac/handler/exception_handler.cc\"\n\"breakpad/src/client/mac/handler/minidump_generator.cc\"\n\"breakpad/src/client/mac/handler/protected_memory_allocator.cc\"\n\"breakpad/src/client/mac/sender/uploader.mm\"\n\"breakpad/src/common/convert_UTF.c\"\n\"breakpad/src/common/md5.cc\"\n\"breakpad/src/common/simple_string_dictionary.cc\"\n\"breakpad/src/common/string_conversion.cc\"\n\"breakpad/src/common/mac/file_id.cc\"\n\"breakpad/src/common/mac/GTMLogger.m\"\n\"breakpad/src/common/mac/HTTPMultipartUpload.m\"\n\"breakpad/src/common/mac/macho_id.cc\"\n\"breakpad/src/common/mac/macho_utilities.cc\"\n\"breakpad/src/common/mac/macho_walker.cc\"\n\"breakpad/src/common/mac/string_utilities.cc\"\n)\nfor breakpadFile in ${breakpadFiles[@]}\ndo\n    cp -f $podPath\"/\"$breakpadFile $classesPath\"/\"$breakpadFile\ndone\n\ncd $examplePath\necho \"Fetch Google BreakPad Done!\" >> $logPath\ncd \"${PROJECT_DIR}/../BreakPadExt/Classes/breakpad/src\"\necho `pwd` >> $logPath\n";
-		};
-		940433319B010F25AB5EF24A /* [CP] Check Pods Manifest.lock */ = {
+		121DABAAD0A09FF703EB08DB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -383,80 +368,145 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C1CC4D5C2ADAEC37704D2B9C /* [CP] Embed Pods Frameworks */ = {
+		17D702AA930A9E7170175B3B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BreakPadExt/BreakPadExt.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BreakPadExt.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		78F6E32727DB5008004A407B /* Run Script Fetch Google BreakPad */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script Fetch Google BreakPad";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexamplePath=`pwd`\nlogPath=$examplePath\"/fetch_google_breakpad.log\"\necho $examplePath >> $logPath\ncd ..\npodPath=`pwd`\ngit submodule add -b chrome_99 -f --name breakpad https://github.com/google/breakpad.git\n\nclassesPath=$podPath\"/BreakPadExt/Classes\"\n\ncd $classesPath\n\nbreakpadPathes=(\n\"breakpad\"\n\"breakpad/src\"\n\"breakpad/src/client\"\n\"breakpad/src/client/ios\"\n\"breakpad/src/client/ios/handler\"\n\"breakpad/src/client/apple\"\n\"breakpad/src/client/apple/Framework\"\n\"breakpad/src/client/mac\"\n\"breakpad/src/client/mac/crash_generation\"\n\"breakpad/src/client/mac/handler\"\n\"breakpad/src/client/mac/sender\"\n\"breakpad/src/common\"\n\"breakpad/src/common/linux\"\n\"breakpad/src/common/mac\"\n\"breakpad/src/google_breakpad\"\n\"breakpad/src/google_breakpad/common\"\n)\nfor breakpadPath in ${breakpadPathes[@]}\ndo\n    mkdir $breakpadPath\ndone\n\nbreakpadFiles=(\n\"breakpad/src/client/minidump_file_writer-inl.h\"\n\"breakpad/src/client/minidump_file_writer.h\"\n\"breakpad/src/client/ios/Breakpad.h\"\n\"breakpad/src/client/ios/BreakpadController.h\"\n\"breakpad/src/client/ios/handler/ios_exception_minidump_generator.h\"\n\"breakpad/src/client/apple/Framework/BreakpadDefines.h\"\n\"breakpad/src/client/mac/handler/ucontext_compat.h\"\n\"breakpad/src/client/mac/handler/breakpad_nlist_64.h\"\n\"breakpad/src/client/mac/handler/dynamic_images.h\"\n\"breakpad/src/client/mac/handler/exception_handler.h\"\n\"breakpad/src/client/mac/handler/minidump_generator.h\"\n\"breakpad/src/client/mac/handler/protected_memory_allocator.h\"\n\"breakpad/src/client/mac/handler/mach_vm_compat.h\"\n\"breakpad/src/client/mac/crash_generation/ConfigFile.h\"\n\"breakpad/src/client/mac/sender/uploader.h\"\n\"breakpad/src/common/basictypes.h\"\n\"breakpad/src/common/convert_UTF.h\"\n\"breakpad/src/common/md5.h\"\n\"breakpad/src/common/memory.h\"\n\"breakpad/src/common/scoped_ptr.h\"\n\"breakpad/src/common/string_conversion.h\"\n\"breakpad/src/common/simple_string_dictionary.h\"\n\"breakpad/src/common/using_std_string.h\"\n\"breakpad/src/common/linux/linux_libc_support.h\"\n\"breakpad/src/common/mac/byteswap.h\"\n\"breakpad/src/common/mac/GTMDefines.h\"\n\"breakpad/src/common/mac/GTMLogger.h\"\n\"breakpad/src/common/mac/HTTPMultipartUpload.h\"\n\"breakpad/src/common/mac/file_id.h\"\n\"breakpad/src/common/mac/macho_id.h\"\n\"breakpad/src/common/mac/macho_utilities.h\"\n\"breakpad/src/common/mac/macho_walker.h\"\n\"breakpad/src/common/mac/scoped_task_suspend-inl.h\"\n\"breakpad/src/common/mac/string_utilities.h\"\n\"breakpad/src/google_breakpad/common/minidump_format.h\"\n\"breakpad/src/google_breakpad/common/minidump_size.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_mac.h\"\n\"breakpad/src/google_breakpad/common/breakpad_types.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_amd64.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_arm.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_arm64.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_mips.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_ppc.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_ppc64.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_sparc.h\"\n\"breakpad/src/google_breakpad/common/minidump_cpu_x86.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_linux.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_ps3.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_solaris.h\"\n\"breakpad/src/google_breakpad/common/minidump_exception_win32.h\"\n\"breakpad/src/client/minidump_file_writer.cc\"\n\"breakpad/src/client/ios/Breakpad.mm\"\n\"breakpad/src/client/ios/BreakpadController.mm\"\n\"breakpad/src/client/ios/handler/ios_exception_minidump_generator.mm\"\n\"breakpad/src/client/mac/crash_generation/ConfigFile.mm\"\n\"breakpad/src/client/mac/handler/breakpad_nlist_64.cc\"\n\"breakpad/src/client/mac/handler/dynamic_images.cc\"\n\"breakpad/src/client/mac/handler/exception_handler.cc\"\n\"breakpad/src/client/mac/handler/minidump_generator.cc\"\n\"breakpad/src/client/mac/handler/protected_memory_allocator.cc\"\n\"breakpad/src/client/mac/sender/uploader.mm\"\n\"breakpad/src/common/convert_UTF.c\"\n\"breakpad/src/common/md5.cc\"\n\"breakpad/src/common/simple_string_dictionary.cc\"\n\"breakpad/src/common/string_conversion.cc\"\n\"breakpad/src/common/mac/file_id.cc\"\n\"breakpad/src/common/mac/GTMLogger.m\"\n\"breakpad/src/common/mac/HTTPMultipartUpload.m\"\n\"breakpad/src/common/mac/macho_id.cc\"\n\"breakpad/src/common/mac/macho_utilities.cc\"\n\"breakpad/src/common/mac/macho_walker.cc\"\n\"breakpad/src/common/mac/string_utilities.cc\"\n)\nfor breakpadFile in ${breakpadFiles[@]}\ndo\n    cp -f $podPath\"/\"$breakpadFile $classesPath\"/\"$breakpadFile\ndone\n\ncd $examplePath\necho \"Fetch Google BreakPad Done!\" >> $logPath\ncd \"${PROJECT_DIR}/../BreakPadExt/Classes/breakpad/src\"\necho `pwd` >> $logPath\n";
+		};
+		82D6EF158538B45E4B91D7C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BreakPadExtUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C23CBC5BA207B8D12F779C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BreakPadExtTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6003F586195388D20070C39A /* Sources */ = {
+		78F6E2E827DB4D9F004A407B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F59E195388D20070C39A /* BPCrashAppDelegate.mm in Sources */,
-				6003F5A7195388D20070C39A /* BPCrashViewController.m in Sources */,
-				6003F59A195388D20070C39A /* main.m in Sources */,
+				78F6E30527DB4DA1004A407B /* main.m in Sources */,
+				78F6E2F727DB4D9F004A407B /* BPCrashViewController.m in Sources */,
+				78F6E2F127DB4D9F004A407B /* BPCrashAppDelegate.m in Sources */,
+				78F6E2F427DB4D9F004A407B /* SceneDelegate.m in Sources */,
+				78F6E2FD27DB4D9F004A407B /* BreakPadExt.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6003F5AA195388D20070C39A /* Sources */ = {
+		78F6E30627DB4DA1004A407B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				78F6E30F27DB4DA1004A407B /* BreakPadExtTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78F6E31027DB4DA1004A407B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78F6E31B27DB4DA1004A407B /* BreakPadExtUITestsLaunchTests.m in Sources */,
+				78F6E31927DB4DA1004A407B /* BreakPadExtUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6003F5B4195388D20070C39A /* PBXTargetDependency */ = {
+		78F6E30C27DB4DA1004A407B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6003F589195388D20070C39A /* BreakPadExt_Example */;
-			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
+			target = 78F6E2EB27DB4D9F004A407B /* BreakPadExt_Example */;
+			targetProxy = 78F6E30B27DB4DA1004A407B /* PBXContainerItemProxy */;
+		};
+		78F6E31627DB4DA1004A407B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78F6E2EB27DB4D9F004A407B /* BreakPadExt_Example */;
+			targetProxy = 78F6E31527DB4DA1004A407B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6003F596195388D20070C39A /* InfoPlist.strings */ = {
+		78F6E2F827DB4D9F004A407B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6003F597195388D20070C39A /* en */,
+				78F6E2F927DB4D9F004A407B /* Base */,
 			);
-			name = InfoPlist.strings;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		6003F5B8195388D20070C39A /* InfoPlist.strings */ = {
+		78F6E30027DB4DA1004A407B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6003F5B9195388D20070C39A /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				71719F9E1E33DC2100824A3D /* Base */,
+				78F6E30127DB4DA1004A407B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -464,188 +514,299 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6003F5BD195388D20070C39A /* Debug */ = {
+		78F6E31C27DB4DA1004A407B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		6003F5BE195388D20070C39A /* Release */ = {
+		78F6E31D27DB4DA1004A407B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		6003F5C0195388D20070C39A /* Debug */ = {
+		78F6E31F27DB4DA1004A407B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 097F95B0D9C7240190A87E64 /* Pods-BreakPadExt_Example.debug.xcconfig */;
+			baseConfigurationReference = C30C1EAAE5D318406FDB5B29 /* Pods-BreakPadExt_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BreakPadExt/BreakPadExt-Prefix.pch";
-				INFOPLIST_FILE = "BreakPadExt/BreakPadExt-Info.plist";
-				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C39GTGS9D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BreakPadExt/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itghost.BreakPadExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				WRAPPER_EXTENSION = app;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		6003F5C1195388D20070C39A /* Release */ = {
+		78F6E32027DB4DA1004A407B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39ECE8F21165A5D575499083 /* Pods-BreakPadExt_Example.release.xcconfig */;
+			baseConfigurationReference = 53D16C4B44C8CDC7CCD7C3EB /* Pods-BreakPadExt_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BreakPadExt/BreakPadExt-Prefix.pch";
-				INFOPLIST_FILE = "BreakPadExt/BreakPadExt-Info.plist";
-				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C39GTGS9D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BreakPadExt/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itghost.BreakPadExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				WRAPPER_EXTENSION = app;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		6003F5C3195388D20070C39A /* Debug */ = {
+		78F6E32227DB4DA1004A407B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B885B580771362308CBB2D2B /* Pods-BreakPadExt_Tests.debug.xcconfig */;
+			baseConfigurationReference = 009A07E3F7CAF11D33CA3575 /* Pods-BreakPadExtTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Tests/Tests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C39GTGS9D;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itghost.BreakPadExtTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BreakPadExt_Example.app/BreakPadExt_Example";
-				WRAPPER_EXTENSION = xctest;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BreakPadExt.app/BreakPadExt";
 			};
 			name = Debug;
 		};
-		6003F5C4195388D20070C39A /* Release */ = {
+		78F6E32327DB4DA1004A407B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD725218F0D7490A00957B40 /* Pods-BreakPadExt_Tests.release.xcconfig */;
+			baseConfigurationReference = 75E568ED717FB8B9E3EFBBA8 /* Pods-BreakPadExtTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
-				INFOPLIST_FILE = "Tests/Tests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C39GTGS9D;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itghost.BreakPadExtTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BreakPadExt_Example.app/BreakPadExt_Example";
-				WRAPPER_EXTENSION = xctest;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BreakPadExt.app/BreakPadExt";
+			};
+			name = Release;
+		};
+		78F6E32527DB4DA1004A407B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CEE69BB8D00A97EBDD6E525 /* Pods-BreakPadExtUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C39GTGS9D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itghost.BreakPadExtUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BreakPadExt;
+			};
+			name = Debug;
+		};
+		78F6E32627DB4DA1004A407B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31053080C868CC2CDD29C3C4 /* Pods-BreakPadExtUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C39GTGS9D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itghost.BreakPadExtUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BreakPadExt;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6003F585195388D10070C39A /* Build configuration list for PBXProject "BreakPadExt" */ = {
+		78F6E2E727DB4D9F004A407B /* Build configuration list for PBXProject "BreakPadExt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6003F5BD195388D20070C39A /* Debug */,
-				6003F5BE195388D20070C39A /* Release */,
+				78F6E31C27DB4DA1004A407B /* Debug */,
+				78F6E31D27DB4DA1004A407B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "BreakPadExt_Example" */ = {
+		78F6E31E27DB4DA1004A407B /* Build configuration list for PBXNativeTarget "BreakPadExt_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6003F5C0195388D20070C39A /* Debug */,
-				6003F5C1195388D20070C39A /* Release */,
+				78F6E31F27DB4DA1004A407B /* Debug */,
+				78F6E32027DB4DA1004A407B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "BreakPadExt_Tests" */ = {
+		78F6E32127DB4DA1004A407B /* Build configuration list for PBXNativeTarget "BreakPadExtTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6003F5C3195388D20070C39A /* Debug */,
-				6003F5C4195388D20070C39A /* Release */,
+				78F6E32227DB4DA1004A407B /* Debug */,
+				78F6E32327DB4DA1004A407B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78F6E32427DB4DA1004A407B /* Build configuration list for PBXNativeTarget "BreakPadExtUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78F6E32527DB4DA1004A407B /* Debug */,
+				78F6E32627DB4DA1004A407B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		78F6E2FB27DB4D9F004A407B /* BreakPadExt.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				78F6E2FC27DB4D9F004A407B /* BreakPadExt.xcdatamodel */,
+			);
+			currentVersion = 78F6E2FC27DB4D9F004A407B /* BreakPadExt.xcdatamodel */;
+			path = BreakPadExt.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = 6003F582195388D10070C39A /* Project object */;
+	rootObject = 78F6E2E427DB4D9F004A407B /* Project object */;
 }
