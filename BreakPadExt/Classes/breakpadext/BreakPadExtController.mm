@@ -114,7 +114,7 @@ NSString* GetPlatform() {
 
 #pragma mark - Breakpad
 
-BOOL IsDebuggerActive() {
+BOOL IsDebuggerActive(void) {
   BOOL result = NO;
   NSUserDefaults *stdDefaults = [NSUserDefaults standardUserDefaults];
 

@@ -9,16 +9,17 @@
 #import "BPCrashViewController.h"
 
 #import <CoreData/CoreData.h>
+#import <Foundation/NSXPCConnection.h>
 
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <Masonry/Masonry.h>
 
 #import "Person+CoreDataClass.h"
 
-#define BP_CRASH_ADD_CRASH_TYPE(crashType) \
-[self addCrashType:self.text##crashType selector:@selector(raise##crashType)];
+#define BP_CRASH_ADD_CRASH_TYPE(crashType, order, remark) \
+[self addCrashType:self.text##crashType selector:@selector(raise##crashType) index:order comment:remark];
 
-#define BG_CRASH_DEFINE_RAISE(crashType) \
+#define BG_CRASH_DEFINE_RAISE(crashType, order) \
 - (void)raise##crashType
 
 #define BG_CRASH_DEFINE_TEXT(crashType) \
@@ -48,15 +49,26 @@
     [self makeUI];
     [self makeActions];
     
-    BP_CRASH_ADD_CRASH_TYPE(NSGenericException);
-    BP_CRASH_ADD_CRASH_TYPE(NSRangeException);
-    BP_CRASH_ADD_CRASH_TYPE(NSInvalidArgumentException);
-    BP_CRASH_ADD_CRASH_TYPE(NSInternalInconsistencyException);
-    BP_CRASH_ADD_CRASH_TYPE(NSMallocException);
-    BP_CRASH_ADD_CRASH_TYPE(NSObjectInaccessibleException);
-    BP_CRASH_ADD_CRASH_TYPE(NSObjectNotAvailableException);
+    BP_CRASH_ADD_CRASH_TYPE(NSGenericException,                 @"1.1",     @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(NSRangeException,                   @"1.2",     @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(NSInvalidArgumentException,         @"1.3",     @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(NSInternalInconsistencyException,   @"1.4",     @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(NSMallocException,                  @"1.5",     @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(NSObjectInaccessibleException,      @"1.6",     @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(NSObjectNotAvailableException,      @"1.7",     @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(NSDestinationInvalidException,      @"1.8",     @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(NSPortTimeoutException,             @"1.9",     @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(NSInvalidSendPortException,         @"1.10",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(NSInvalidReceivePortException,      @"1.11",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(NSPortSendException,                @"1.12",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(NSPortReceiveException,             @"1.13",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(NSOldStyleException,                @"1.14",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(NSInconsistentArchiveException,     @"1.15",    @"✗");
+    BP_CRASH_ADD_CRASH_TYPE(NSUndefinedKeyException,            @"1.16",    @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(NSCharacterConversionException,     @"1.17",    @"✓");
+    BP_CRASH_ADD_CRASH_TYPE(NSParseErrorException,              @"1.18",    @"✓");
     
-    BP_CRASH_ADD_CRASH_TYPE(Arithmetic);
+    BP_CRASH_ADD_CRASH_TYPE(Arithmetic,                         @"2.0",     @"✓");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -114,9 +126,20 @@
     self.crashTypeButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         @strongify(self);
         UIAlertController *controller = [UIAlertController alertControllerWithTitle:self.textSelectCrashType message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-        [self.crashTypeActions enumerateKeysAndObjectsUsingBlock:^(__kindof NSString * _Nonnull key, __kindof UIAlertAction * _Nonnull obj, BOOL * _Nonnull stop) {
-            [controller addAction:obj];
+        NSArray<__kindof NSString *> *keys = self.crashTypeActions.allKeys;
+        keys = [keys sortedArrayUsingComparator:^NSComparisonResult(NSString * _Nonnull obj1, NSString * _Nonnull obj2) {
+            NSArray<__kindof NSString *> *indexs1 = [self.crashTypeActions[obj1].title componentsSeparatedByString:@"."];
+            NSArray<__kindof NSString *> *indexs2 = [self.crashTypeActions[obj2].title componentsSeparatedByString:@"."];
+            NSComparisonResult firstResult = [@(indexs1[0].integerValue) compare:@(indexs2[0].integerValue)];
+            if (firstResult == NSOrderedSame) {
+                return [@(indexs1[1].integerValue) compare:@(indexs2[1].integerValue)];
+            }
+            
+            return firstResult;
         }];
+        for (NSString *key in keys) {
+            [controller addAction:self.crashTypeActions[key]];
+        }
         [controller addAction:[UIAlertAction actionWithTitle:self.textCancel style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         }]];
         return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
@@ -131,9 +154,12 @@
 
 #pragma mark - Crash Type
 
-- (void)addCrashType:(NSString *)crashType selector:(SEL)selector {
+- (void)addCrashType:(NSString *)crashType
+            selector:(SEL)selector
+               index:(NSString *)index
+             comment:(NSString *)comment {
     @weakify(self);
-    self.crashTypeActions[crashType] = [UIAlertAction actionWithTitle:crashType style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    self.crashTypeActions[crashType] = [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ %@", index, crashType] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         @strongify(self);
         [self.crashTypeButton setTitle:crashType forState:UIControlStateNormal];
     }];
@@ -144,7 +170,7 @@
 
 /// *** Terminating app due to uncaught exception 'NSGenericException', reason: '*** Collection <__NSArrayM: 0x6000025ea5e0> was mutated while being enumerated.'
 /// Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
-BG_CRASH_DEFINE_RAISE(NSGenericException) {
+BG_CRASH_DEFINE_RAISE(NSGenericException, 1.1) {
     NSMutableArray *array = [NSMutableArray arrayWithObjects:@0, @1, @2, @3, nil];
     for (NSNumber *element in array) {
         NSLog(@"%@", element);
@@ -155,14 +181,14 @@ BG_CRASH_DEFINE_RAISE(NSGenericException) {
 
 /// *** Terminating app due to uncaught exception 'NSRangeException', reason: '*** -[__NSArrayM removeObjectsInRange:]: range {0, 10} extends beyond bounds [0 .. 3]'
 /// Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
-BG_CRASH_DEFINE_RAISE(NSRangeException) {
+BG_CRASH_DEFINE_RAISE(NSRangeException, 1.2) {
     NSMutableArray *array = [NSMutableArray arrayWithObjects:@0, @1, @2, @3, nil];
     [array removeObjectsInRange:NSMakeRange(0, 10)];
 }
 
 /// *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '*** -[__NSPlaceholderArray initWithObjects:count:]: attempt to insert nil object from objects[0]'
 /// Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
-BG_CRASH_DEFINE_RAISE(NSInvalidArgumentException) {
+BG_CRASH_DEFINE_RAISE(NSInvalidArgumentException, 1.3) {
     NSObject *element = nil;
     NSArray *arrayCrash = @[element];
     NSLog(@"%@", arrayCrash);
@@ -170,7 +196,7 @@ BG_CRASH_DEFINE_RAISE(NSInvalidArgumentException) {
 
 /// *** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'Modifications to the layout engine must not be performed from a background thread after it has been accessed from the main thread.'
 /// Thread 3: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
-BG_CRASH_DEFINE_RAISE(NSInternalInconsistencyException) {
+BG_CRASH_DEFINE_RAISE(NSInternalInconsistencyException, 1.4) {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         [self.raiseCrashButton setTitle:@"" forState:UIControlStateNormal];
     });
@@ -178,15 +204,13 @@ BG_CRASH_DEFINE_RAISE(NSInternalInconsistencyException) {
 
 /// *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '*** -[NSConcreteMutableData increaseLengthBy:]: absurd extra length: 18446744073709551615, maximum size: 9223372036854775808 bytes'
 /// Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
-BG_CRASH_DEFINE_RAISE(NSMallocException) {
+BG_CRASH_DEFINE_RAISE(NSMallocException, 1.5) {
     NSMutableData *data = [NSMutableData new];
     NSInteger length = NSUIntegerMax;
     [data increaseLengthBy:length];
 }
 
-/// *** Terminating app due to uncaught exception 'NSObjectInaccessibleException', reason: 'CoreData Exception'
-/// Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
-BG_CRASH_DEFINE_RAISE(NSObjectInaccessibleException) {
+BG_CRASH_DEFINE_RAISE(NSObjectInaccessibleException, 1.6) {
     NSException *exception = [NSException exceptionWithName:NSObjectInaccessibleException reason:@"CoreData Exception" userInfo:nil];
     [exception raise];
     
@@ -222,7 +246,7 @@ BG_CRASH_DEFINE_RAISE(NSObjectInaccessibleException) {
 
 /// 'NSObjectNotAvailableException', reason: 'UIAlertView is deprecated and unavailable for UIScene based applications, please use UIAlertController!'
 /// Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
-BG_CRASH_DEFINE_RAISE(NSObjectNotAvailableException) {
+BG_CRASH_DEFINE_RAISE(NSObjectNotAvailableException, 1.7) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"" delegate:nil cancelButtonTitle:self.textCancel otherButtonTitles:self.textCancel, nil];
@@ -230,10 +254,82 @@ BG_CRASH_DEFINE_RAISE(NSObjectNotAvailableException) {
     [alertView show];
 }
 
+/// *** Terminating app due to uncaught exception 'NSDestinationInvalidException', reason: '*** -[BPCrashViewController performSelector:onThread:withObject:waitUntilDone:modes:]: target thread exited while waiting for the perform'
+/// Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
+BG_CRASH_DEFINE_RAISE(NSDestinationInvalidException, 1.8) {
+    NSThread *thread = [[NSThread alloc] initWithBlock:^{
+        NSLog(@"Test NSDestinationInvalidException");
+    }];
+    [thread start];
+    [self performSelector:@selector(testNSDestinationInvalidException) onThread:thread withObject:nil waitUntilDone:YES];
+}
+
+- (void)testNSDestinationInvalidException {
+    NSLog(@"Test NSDestinationInvalidException");
+}
+
+BG_CRASH_DEFINE_RAISE(NSPortTimeoutException, 1.9) {
+    NSException *exception = [NSException exceptionWithName:NSPortTimeoutException reason:@"NSConnection Exception" userInfo:nil];
+    [exception raise];
+}
+
+BG_CRASH_DEFINE_RAISE(NSInvalidSendPortException, 1.10) {
+    NSException *exception = [NSException exceptionWithName:NSInvalidSendPortException reason:@"NSConnection Exception" userInfo:nil];
+    [exception raise];
+}
+
+BG_CRASH_DEFINE_RAISE(NSInvalidReceivePortException, 1.11) {
+    NSException *exception = [NSException exceptionWithName:NSInvalidReceivePortException reason:@"NSConnection Exception" userInfo:nil];
+    [exception raise];
+}
+
+BG_CRASH_DEFINE_RAISE(NSPortSendException, 1.12) {
+    NSException *exception = [NSException exceptionWithName:NSPortSendException reason:@"NSConnection Exception" userInfo:nil];
+    [exception raise];
+}
+
+BG_CRASH_DEFINE_RAISE(NSPortReceiveException, 1.13) {
+    NSException *exception = [NSException exceptionWithName:NSPortReceiveException reason:@"NSConnection Exception" userInfo:nil];
+    [exception raise];
+}
+
+BG_CRASH_DEFINE_RAISE(NSOldStyleException, 1.14) {
+    NSException *exception = [NSException exceptionWithName:NSOldStyleException reason:@"Unknown Exception" userInfo:nil];
+    [exception raise];
+}
+
+BG_CRASH_DEFINE_RAISE(NSInconsistentArchiveException, 1.15) {
+    NSException *exception = [NSException exceptionWithName:NSInconsistentArchiveException reason:@"Unknown Exception" userInfo:nil];
+    [exception raise];
+}
+
+/// *** Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<BPCrashViewController 0x7fc5932058f0> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key Unknown Key.'
+/// Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
+BG_CRASH_DEFINE_RAISE(NSUndefinedKeyException, 1.16) {
+    [self setValue:@"Unknown Value" forKey:@"Unknown Key"];
+}
+
+/// *** Terminating app due to uncaught exception 'NSCharacterConversionException', reason: 'Conversion to encoding 30 failed'
+/// Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
+BG_CRASH_DEFINE_RAISE(NSCharacterConversionException, 1.17) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    const char *string = @"阳光正好".cString;
+    NSLog(@"%s", string);
+#pragma clang diagnostic pop
+}
+
+/// *** Terminating app due to uncaught exception 'NSParseErrorException', reason: 'Error Domain=NSCocoaErrorDomain Code=3840 "Unexpected character é at line 1" UserInfo={NSDebugDescription=Unexpected character é at line 1, kCFPropertyListOldStyleParsingError=Error Domain=NSCocoaErrorDomain Code=3840 "Unexpected character '0x9633' at line 1" UserInfo={NSDebugDescription=Unexpected character '0x9633' at line 1}}'
+/// Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
+BG_CRASH_DEFINE_RAISE(NSParseErrorException, 1.18) {
+    NSDictionary *properties = @"阳光正好".propertyList;
+    NSLog(@"%@", properties);
+}
+
 #pragma mark - Mach
 
 /// Thread 1: EXC_ARITHMETIC (code=EXC_I386_DIV, subcode=0x0)
-BG_CRASH_DEFINE_RAISE(Arithmetic) {
+BG_CRASH_DEFINE_RAISE(Arithmetic, 2.0) {
     int denominator = 0;
     int numerator = 100;
     NSLog(@"%d", numerator / denominator);
@@ -299,7 +395,29 @@ BG_CRASH_DEFINE_TEXT(NSObjectInaccessibleException) {
     return NSLocalizedStringFromTable(@"NSObjectInaccessibleException", nil, @"OC程序异常");}
 BG_CRASH_DEFINE_TEXT(NSObjectNotAvailableException) {
     return NSLocalizedStringFromTable(@"NSObjectNotAvailableException", nil, @"OC程序异常");}
+BG_CRASH_DEFINE_TEXT(NSDestinationInvalidException) {
+    return NSLocalizedStringFromTable(@"NSDestinationInvalidException", nil, @"OC程序异常");}
+BG_CRASH_DEFINE_TEXT(NSPortTimeoutException) {
+    return NSLocalizedStringFromTable(@"NSPortTimeoutException", nil, @"OC程序异常");}
+BG_CRASH_DEFINE_TEXT(NSInvalidSendPortException) {
+    return NSLocalizedStringFromTable(@"NSInvalidSendPortException", nil, @"OC程序异常");}
+BG_CRASH_DEFINE_TEXT(NSInvalidReceivePortException) {
+    return NSLocalizedStringFromTable(@"NSInvalidReceivePortException", nil, @"OC程序异常");}
+BG_CRASH_DEFINE_TEXT(NSPortSendException) {
+    return NSLocalizedStringFromTable(@"NSPortSendException", nil, @"OC程序异常");}
+BG_CRASH_DEFINE_TEXT(NSPortReceiveException) {
+    return NSLocalizedStringFromTable(@"NSPortReceiveException", nil, @"OC程序异常");}
 
+BG_CRASH_DEFINE_TEXT(NSOldStyleException) {
+return NSLocalizedStringFromTable(@"NSOldStyleException", nil, @"OC程序异常");}
+BG_CRASH_DEFINE_TEXT(NSInconsistentArchiveException) {
+return NSLocalizedStringFromTable(@"NSInconsistentArchiveException", nil, @"OC程序异常");}
+BG_CRASH_DEFINE_TEXT(NSUndefinedKeyException) {
+return NSLocalizedStringFromTable(@"NSUndefinedKeyException", nil, @"OC程序异常");}
+BG_CRASH_DEFINE_TEXT(NSCharacterConversionException) {
+return NSLocalizedStringFromTable(@"NSCharacterConversionException", nil, @"OC程序异常");}
+BG_CRASH_DEFINE_TEXT(NSParseErrorException) {
+return NSLocalizedStringFromTable(@"NSParseErrorException", nil, @"OC程序异常");}
 
 - (NSString *)textArithmetic {
     return NSLocalizedStringFromTable(@"Arithmetic", nil, @"运算");}

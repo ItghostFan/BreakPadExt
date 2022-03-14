@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 extern "C" {
 #endif
 
-BOOL IsDebuggerActive();
+BOOL IsDebuggerActive(void);
 
 #ifdef __cplusplus
 }
