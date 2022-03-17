@@ -14,10 +14,6 @@
 
 #pragma mark - Breakpad
 
-extern ProtectedMemoryAllocator *gMasterAllocator;
-extern ProtectedMemoryAllocator *gKeyValueAllocator;
-extern ProtectedMemoryAllocator *gBreakpadAllocator;
-
 extern pthread_mutex_t gDictionaryMutex;
 
 BreakpadRef BreakPadExtCreate(NSDictionary *parameters) {
@@ -38,7 +34,7 @@ BreakpadRef BreakPadExtCreate(NSDictionary *parameters) {
 
     gKeyValueAllocator =
         new (gMasterAllocator->Allocate(sizeof(ProtectedMemoryAllocator)))
-            ProtectedMemoryAllocator(sizeof(SimpleStringDictionary));
+            ProtectedMemoryAllocator(sizeof(LongStringDictionary));
 
     // Create a mutex for use in accessing the SimpleStringDictionary
     int mutexResult = pthread_mutex_init(&gDictionaryMutex, NULL);
