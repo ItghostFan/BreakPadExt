@@ -8,10 +8,7 @@
 #ifndef Breakpad_hpp
 #define Breakpad_hpp
 
-#include <assert.h>
 #import <Foundation/Foundation.h>
-#include <pthread.h>
-#include <sys/stat.h>
 #include <sys/sysctl.h>
 
 #include "exception_handler.h"
@@ -20,7 +17,6 @@
 #import "protected_memory_allocator.h"
 
 using google_breakpad::ConfigFile;
-using google_breakpad::EnsureDirectoryPathExists;
 using google_breakpad::LongStringDictionary;
 
 extern ProtectedMemoryAllocator *gMasterAllocator;
