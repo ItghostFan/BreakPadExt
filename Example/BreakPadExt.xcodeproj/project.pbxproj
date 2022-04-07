@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C630A9764A82E05766626C1 /* Pods_BreakPadExtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3B86BE37533A5ADC5A2141 /* Pods_BreakPadExtUITests.framework */; };
+		7191912F3FC406573065EA5E /* Pods_BreakPadExtTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3493E8B268E9CA0DA00EB7F8 /* Pods_BreakPadExtTests.framework */; };
 		78F6E2F127DB4D9F004A407B /* BPCrashAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E2F027DB4D9F004A407B /* BPCrashAppDelegate.m */; };
 		78F6E2F427DB4D9F004A407B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E2F327DB4D9F004A407B /* SceneDelegate.m */; };
 		78F6E2F727DB4D9F004A407B /* BPCrashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E2F627DB4D9F004A407B /* BPCrashViewController.m */; };
@@ -20,8 +20,8 @@
 		78F6E31927DB4DA1004A407B /* BreakPadExtUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E31827DB4DA1004A407B /* BreakPadExtUITests.m */; };
 		78F6E31B27DB4DA1004A407B /* BreakPadExtUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E31A27DB4DA1004A407B /* BreakPadExtUITestsLaunchTests.m */; };
 		78F6E33C27DEE353004A407B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F6E33B27DEE353004A407B /* CoreData.framework */; };
-		7DF187967F82AD87C403E6BA /* Pods_BreakPadExtTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F045EA7BD67E0B0754E9BF7 /* Pods_BreakPadExtTests.framework */; };
-		B8BF34F30EB31CD5C576105A /* Pods_BreakPadExt_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333ACB4CA8D1D123E21649C2 /* Pods_BreakPadExt_Example.framework */; };
+		7A4BE52B35D91C4EAE51EA09 /* Pods_BreakPadExtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0C790989D89C009A545F35 /* Pods_BreakPadExtUITests.framework */; };
+		98F17DA9140DAC7E3F9D7CC3 /* Pods_BreakPadExt_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1757025FD317905B95F6B9B6 /* Pods_BreakPadExt_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,11 +43,11 @@
 
 /* Begin PBXFileReference section */
 		009A07E3F7CAF11D33CA3575 /* Pods-BreakPadExtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExtTests.debug.xcconfig"; path = "Target Support Files/Pods-BreakPadExtTests/Pods-BreakPadExtTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1757025FD317905B95F6B9B6 /* Pods_BreakPadExt_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPadExt_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CEE69BB8D00A97EBDD6E525 /* Pods-BreakPadExtUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExtUITests.debug.xcconfig"; path = "Target Support Files/Pods-BreakPadExtUITests/Pods-BreakPadExtUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		2F045EA7BD67E0B0754E9BF7 /* Pods_BreakPadExtTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPadExtTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31053080C868CC2CDD29C3C4 /* Pods-BreakPadExtUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExtUITests.release.xcconfig"; path = "Target Support Files/Pods-BreakPadExtUITests/Pods-BreakPadExtUITests.release.xcconfig"; sourceTree = "<group>"; };
-		333ACB4CA8D1D123E21649C2 /* Pods_BreakPadExt_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPadExt_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B3B86BE37533A5ADC5A2141 /* Pods_BreakPadExtUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPadExtUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3493E8B268E9CA0DA00EB7F8 /* Pods_BreakPadExtTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPadExtTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F0C790989D89C009A545F35 /* Pods_BreakPadExtUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPadExtUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D16C4B44C8CDC7CCD7C3EB /* Pods-BreakPadExt_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExt_Example.release.xcconfig"; path = "Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example.release.xcconfig"; sourceTree = "<group>"; };
 		75E568ED717FB8B9E3EFBBA8 /* Pods-BreakPadExtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPadExtTests.release.xcconfig"; path = "Target Support Files/Pods-BreakPadExtTests/Pods-BreakPadExtTests.release.xcconfig"; sourceTree = "<group>"; };
 		78F6E2EC27DB4D9F004A407B /* BreakPadExt_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakPadExt_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,8 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8BF34F30EB31CD5C576105A /* Pods_BreakPadExt_Example.framework in Frameworks */,
 				78F6E33C27DEE353004A407B /* CoreData.framework in Frameworks */,
+				98F17DA9140DAC7E3F9D7CC3 /* Pods_BreakPadExt_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DF187967F82AD87C403E6BA /* Pods_BreakPadExtTests.framework in Frameworks */,
+				7191912F3FC406573065EA5E /* Pods_BreakPadExtTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C630A9764A82E05766626C1 /* Pods_BreakPadExtUITests.framework in Frameworks */,
+				7A4BE52B35D91C4EAE51EA09 /* Pods_BreakPadExtUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,9 +208,9 @@
 			isa = PBXGroup;
 			children = (
 				78F6E33B27DEE353004A407B /* CoreData.framework */,
-				2F045EA7BD67E0B0754E9BF7 /* Pods_BreakPadExtTests.framework */,
-				4B3B86BE37533A5ADC5A2141 /* Pods_BreakPadExtUITests.framework */,
-				333ACB4CA8D1D123E21649C2 /* Pods_BreakPadExt_Example.framework */,
+				3493E8B268E9CA0DA00EB7F8 /* Pods_BreakPadExtTests.framework */,
+				3F0C790989D89C009A545F35 /* Pods_BreakPadExtUITests.framework */,
+				1757025FD317905B95F6B9B6 /* Pods_BreakPadExt_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,7 +226,7 @@
 				78F6E2E827DB4D9F004A407B /* Sources */,
 				78F6E2E927DB4D9F004A407B /* Frameworks */,
 				78F6E2EA27DB4D9F004A407B /* Resources */,
-				17D702AA930A9E7170175B3B /* [CP] Embed Pods Frameworks */,
+				A428C342B331FB757004E9AF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -367,23 +367,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		17D702AA930A9E7170175B3B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		82D6EF158538B45E4B91D7C8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,6 +409,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A428C342B331FB757004E9AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BreakPadExt_Example/Pods-BreakPadExt_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

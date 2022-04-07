@@ -57,6 +57,7 @@ TODO: Add long description of the pod here.
   end
   
   s.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PROJECT_DIR}/../../BreakPadExt/Classes/breakpad/src"' }
+  s.user_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PROJECT_DIR}/../BreakPadExt/Classes/breakpad/src" "${PODS_ROOT}/BreakPadExt/Classes/breakpad/src"' }
   
   # s.resource_bundles = {
   #   'BreakPadExt' => ['BreakPadExt/Assets/*.png']
@@ -65,5 +66,6 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.frameworks = 'Foundation'
+  s.library = 'c++'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

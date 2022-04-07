@@ -7,14 +7,26 @@
 
 #import "BPCrashAppDelegate.h"
 
-#if __has_include("BreakPadExtController.h")
+#define BREAK_PAD_EXT_IMPORTED __has_include("BreakPadExtController.h")
+
+#if BREAK_PAD_EXT_IMPORTED
+
+#define USE_GOOGLE_BREAKPAD 1
+
+#if USE_GOOGLE_BREAKPAD
+#import "BreakpadController.h"
+typedef BreakpadController BreakpadCrashController;
+#else
 #import "BreakPadExtController.h"
-#endif
+typedef BreakPadExtController BreakpadCrashController;
+#endif  // #if !USE_GOOGLE_BREAKPAD
+
+#endif  // #if BREAK_PAD_EXT_IMPORTED
 
 @interface BPCrashAppDelegate ()
 
-#if __has_include("BreakPadExtController.h")
-@property (strong, nonatomic) BreakPadExtController *crashController;
+#if BREAK_PAD_EXT_IMPORTED
+@property (strong, nonatomic) BreakpadCrashController *crashController;
 #endif
 
 @end
@@ -23,14 +35,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-#if __has_include("BreakPadExtController.h")
+#if BREAK_PAD_EXT_IMPORTED
     NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    self.crashController = [BreakPadExtController new];
+    self.crashController = [BreakpadCrashController new];
     [self.crashController updateConfiguration:
          @{
              @BREAKPAD_VENDOR: @"Test",
              @BREAKPAD_DUMP_DIRECTORY: documentPath,
-             @BREAKPAD_URL: @" "        // 不能为空串～
+             @BREAKPAD_URL: @"Could Not Be Empty URL"
          }
     ];
     [self.crashController start:NO];
@@ -39,7 +51,7 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-#if __has_include("BreakPadExtController.h")
+#if BREAK_PAD_EXT_IMPORTED
     [self.crashController stop];
 #endif
 }
