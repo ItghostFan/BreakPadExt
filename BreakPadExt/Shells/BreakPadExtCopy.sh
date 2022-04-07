@@ -5,7 +5,7 @@
 # echo $examplePath >> $logPath
 # cd ..
 specPath=`pwd`
-git breakpad https://github.com/google/breakpad.git -b chrome_99 
+git -clone https://github.com/google/breakpad.git -b chrome_99 
 
 classesPath=$specPath"/BreakPadExt/Classes"
 
