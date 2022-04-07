@@ -27,6 +27,8 @@ TODO: Add long description of the pod here.
   s.author           = { 'ItghostFan' => 'ItghostFan@163.com' }
   s.source           = { :git => 'https://github.com/ItghostFan/BreakPadExt.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  
+  s.prepare_command = 'touch fucking.txt' #echo `pwd`"##########"
 
   s.ios.deployment_target = '9.0'
   
@@ -42,6 +44,10 @@ TODO: Add long description of the pod here.
   s.subspec 'Core' do |core|
       core.source_files = 'BreakPadExt/Classes/breakpadext/**/*'
       core.dependency 'BreakPadExt/BreakPad'
+  end
+  
+  s.subspec 'Shell' do |shell|
+      shell.source_files = 'BreakPadExt/Shells/**/*'
   end
   
   s.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PROJECT_DIR}/../../BreakPadExt/Classes/breakpad/src"' }
