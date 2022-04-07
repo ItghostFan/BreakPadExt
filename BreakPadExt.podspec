@@ -29,10 +29,11 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   
   s.prepare_command = <<-CMD
-    echo "BreakPadExt ################################"
-    env
-    touch fucking.txt #echo `pwd`"##########"
-    echo `pwd`
+    bash "BreakPadExt/Shells/BreakPadExtConfig.sh"
+#    echo "BreakPadExt ################################"
+#    env
+#    touch fucking.txt #echo `pwd`"##########"
+#    echo `pwd`
   CMD
 
   s.ios.deployment_target = '9.0'

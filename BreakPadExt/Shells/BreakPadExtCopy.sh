@@ -1,13 +1,13 @@
 #!/bin/bash
 
-examplePath=`pwd`
-logPath=$examplePath"/fetch_google_breakpad.log"
-echo $examplePath >> $logPath
-cd ..
-podPath=`pwd`
+# examplePath=`pwd`
+# logPath=$examplePath"/fetch_google_breakpad.log"
+# echo $examplePath >> $logPath
+# cd ..
+specPath=`pwd`
 git submodule add -b chrome_99 -f --name breakpad https://github.com/google/breakpad.git
 
-classesPath=$podPath"/BreakPadExt/Classes"
+classesPath=$specPath"/BreakPadExt/Classes"
 
 cd $classesPath
 
@@ -120,10 +120,10 @@ breakpadFiles=(
 )
 for breakpadFile in ${breakpadFiles[@]}
 do
-    cp -f $podPath"/"$breakpadFile $classesPath"/"$breakpadFile
+    cp -f $specPath"/"$breakpadFile $classesPath"/"$breakpadFile
 done
 
-cd $examplePath
-echo "Fetch Google BreakPad Done!" >> $logPath
-cd "${PROJECT_DIR}/../BreakPadExt/Classes/breakpad/src"
-echo `pwd` >> $logPath
+# cd $examplePath
+# echo "Fetch Google BreakPad Done!" >> $logPath
+# cd "${PROJECT_DIR}/../BreakPadExt/Classes/breakpad/src"
+# echo `pwd` >> $logPath

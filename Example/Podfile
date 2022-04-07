@@ -3,6 +3,7 @@ use_frameworks!
 platform :ios, '9.0'
 
 target 'BreakPadExt_Example' do
+#  pod 'BreakPadExt', :git => 'https://github.com/ItghostFan/BreakPadExt.git'
   pod 'BreakPadExt', :path => '../'
   pod 'ReactiveObjC'
   pod 'Masonry'
