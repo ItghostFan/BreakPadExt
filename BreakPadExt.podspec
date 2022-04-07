@@ -53,7 +53,7 @@ TODO: Add long description of the pod here.
   end
   
   s.subspec 'Shells' do |shells|
-    shells.source_files = 'BreakPadExt/Shells/**/*'
+    shells.resources = 'BreakPadExt/Shells/**/*'
   end
   
   s.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PROJECT_DIR}/../../BreakPadExt/Classes/breakpad/src"' }
