@@ -648,6 +648,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4C39GTGS9D;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BreakPadExt/BreakPadExt.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC/ReactiveObjC.framework/Headers\"",
+					"\"${PODS_ROOT}/BreakPadExt/Classes/breakpad/src\"",
+				);
 				INFOPLIST_FILE = BreakPadExt/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
