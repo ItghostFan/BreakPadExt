@@ -11,10 +11,10 @@
 #import <Foundation/Foundation.h>
 #include <sys/sysctl.h>
 
-#include "exception_handler.h"
-#import "long_string_dictionary.h"
-#include "ConfigFile.h"
-#import "protected_memory_allocator.h"
+#import "client/mac/handler/exception_handler.h"
+#import "common/long_string_dictionary.h"
+#include "client/mac/crash_generation/ConfigFile.h"
+#import "client/mac/handler/protected_memory_allocator.h"
 
 using google_breakpad::ConfigFile;
 using google_breakpad::LongStringDictionary;

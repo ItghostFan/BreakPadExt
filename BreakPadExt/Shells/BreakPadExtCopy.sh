@@ -5,7 +5,7 @@
 # echo $examplePath >> $logPath
 # cd ..
 specPath=`pwd`
-git submodule add -b chrome_99 -f --name breakpad https://github.com/google/breakpad.git
+git breakpad https://github.com/google/breakpad.git -b chrome_99 
 
 classesPath=$specPath"/BreakPadExt/Classes"
 
