@@ -39,7 +39,7 @@ TODO: Add long description of the pod here.
   
   s.requires_arc = true
 
-  s.default_subspec = 'Core'
+  s.default_subspec = 'Core', 'Shells'
   
   s.subspec 'BreakPad' do |breakpad|
     breakpad.requires_arc = false
@@ -51,8 +51,8 @@ TODO: Add long description of the pod here.
     core.dependency 'BreakPadExt/BreakPad'
   end
   
-  s.subspec 'Shell' do |shell|
-    shell.source_files = 'BreakPadExt/Shells/**/*'
+  s.subspec 'Shells' do |shells|
+    shells.source_files = 'BreakPadExt/Shells/**/*'
   end
   
   s.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PROJECT_DIR}/../../BreakPadExt/Classes/breakpad/src"' }
