@@ -27,22 +27,22 @@ class Breakpad {
  public:
   // factory method
   static Breakpad* Create(NSDictionary* parameters) {
-      // Allocate from our special allocation pool
-      Breakpad* breakpad =
-        new (gBreakpadAllocator->Allocate(sizeof(Breakpad)))
-          Breakpad();
+    // Allocate from our special allocation pool
+    Breakpad* breakpad =
+      new (gBreakpadAllocator->Allocate(sizeof(Breakpad)))
+        Breakpad();
 
-      if (!breakpad)
-        return NULL;
+    if (!breakpad)
+      return NULL;
 
-      if (!breakpad->Initialize(parameters)) {
-        // Don't use operator delete() here since we allocated from special pool
-        breakpad->~Breakpad();
-        return NULL;
-      }
-
-      return breakpad;
+    if (!breakpad->Initialize(parameters)) {
+      // Don't use operator delete() here since we allocated from special pool
+      breakpad->~Breakpad();
+      return NULL;
     }
+
+    return breakpad;
+  }
 
   ~Breakpad();
 

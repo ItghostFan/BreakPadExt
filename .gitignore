@@ -7,6 +7,3 @@ Podfile.lock
 
 # ignore breakpad
 breakpad
-
-# ignore gitsubmodules
-.gitmodules

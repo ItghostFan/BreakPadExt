@@ -56,7 +56,6 @@ breakpadFiles=(
 "breakpad/src/common/long_string_dictionary.h"
 "breakpad/src/common/macros.h"
 "breakpad/src/common/md5.h"
-"breakpad/src/common/memory.h"
 "breakpad/src/common/memory_allocator.h"
 "breakpad/src/common/scoped_ptr.h"
 "breakpad/src/common/string_conversion.h"
