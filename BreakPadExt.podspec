@@ -56,8 +56,8 @@ TODO: Add long description of the pod here.
     shells.resources = 'BreakPadExt/Shells/**/*'
   end
   
-  s.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PROJECT_DIR}/../../BreakPadExt/Classes/breakpad/src" "${PODS_ROOT}/BreakPadExt/BreakPadExt/Classes/breakpad/src"' }
-  s.user_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PROJECT_DIR}/../BreakPadExt/Classes/breakpad/src" "${PODS_ROOT}/BreakPadExt/BreakPadExt/Classes/breakpad/src"' }
+  s.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/BreakPadExt/BreakPadExt/Classes/breakpad/src"' }
+  s.user_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/BreakPadExt/BreakPadExt/Classes/breakpad/src"' }
   
   # s.resource_bundles = {
   #   'BreakPadExt' => ['BreakPadExt/Assets/*.png']
