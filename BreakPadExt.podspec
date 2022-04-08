@@ -30,10 +30,6 @@ TODO: Add long description of the pod here.
   
   s.prepare_command = <<-CMD
     bash "BreakPadExt/Shells/BreakPadExtConfig.sh"
-#    echo "BreakPadExt ################################"
-#    env
-#    touch fucking.txt #echo `pwd`"##########"
-#    echo `pwd`
   CMD
 
   s.ios.deployment_target = '9.0'
@@ -56,8 +52,11 @@ TODO: Add long description of the pod here.
     shells.resources = 'BreakPadExt/Shells/**/*'
   end
   
-#  s.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/BreakPadExt/BreakPadExt/Classes/breakpad/src"' }
-#  s.user_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/BreakPadExt/BreakPadExt/Classes/breakpad/src"' }
+  developmentPodPath = "\"#{Dir::pwd}/BreakPadExt/Classes/breakpad/src\""
+  
+  s.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => "#{developmentPodPath} \"${PODS_ROOT}/BreakPadExt/BreakPadExt/Classes/breakpad/src\"" }
+  
+  s.user_target_xcconfig = { 'HEADER_SEARCH_PATHS' => "#{developmentPodPath} \"${PODS_ROOT}/BreakPadExt/BreakPadExt/Classes/breakpad/src\"" }
   
   # s.resource_bundles = {
   #   'BreakPadExt' => ['BreakPadExt/Assets/*.png']
