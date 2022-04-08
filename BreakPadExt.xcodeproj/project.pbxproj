@@ -1,0 +1,900 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		787C488D28002DDC00E77633 /* BreakPadExtController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 787C482328002D4500E77633 /* BreakPadExtController.mm */; };
+		787C488E28002DDC00E77633 /* BreakPadExt.mm in Sources */ = {isa = PBXBuildFile; fileRef = 787C482428002D4500E77633 /* BreakPadExt.mm */; };
+		787C488F28002DDC00E77633 /* ios_exception_minidump_generator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 787C486C28002D4600E77633 /* ios_exception_minidump_generator.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		787C489028002DDC00E77633 /* Breakpad.mm in Sources */ = {isa = PBXBuildFile; fileRef = 787C486E28002D4600E77633 /* Breakpad.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		787C489128002DDC00E77633 /* BreakpadController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 787C487128002D4600E77633 /* BreakpadController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		787C489228002DDC00E77633 /* uploader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 787C488228002D4600E77633 /* uploader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		787C489328002DDC00E77633 /* ConfigFile.mm in Sources */ = {isa = PBXBuildFile; fileRef = 787C488528002D4600E77633 /* ConfigFile.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		787C489428002DE400E77633 /* encoding_util.m in Sources */ = {isa = PBXBuildFile; fileRef = 787C483628002D4500E77633 /* encoding_util.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		787C489528002DE400E77633 /* GTMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 787C483828002D4500E77633 /* GTMLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		787C489628002DE400E77633 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 787C483A28002D4500E77633 /* HTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		787C489728002DE400E77633 /* HTTPMultipartUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 787C483D28002D4500E77633 /* HTTPMultipartUpload.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		787C48982800311C00E77633 /* minidump_file_writer-inl.h in breakpad/src/client/ */ = {isa = PBXBuildFile; fileRef = 787C486928002D4600E77633 /* minidump_file_writer-inl.h */; };
+		787C48992800312700E77633 /* minidump_file_writer.h in breakpad/src/client/ */ = {isa = PBXBuildFile; fileRef = 787C488628002D4600E77633 /* minidump_file_writer.h */; };
+		787C489B2800315800E77633 /* Breakpad.h in breakpad/src/client/ios/ */ = {isa = PBXBuildFile; fileRef = 787C486F28002D4600E77633 /* Breakpad.h */; };
+		787C489C2800316C00E77633 /* BreakpadController.h in breakpad/src/client/ios/ */ = {isa = PBXBuildFile; fileRef = 787C487028002D4600E77633 /* BreakpadController.h */; };
+		787C489E2800346100E77633 /* ios_exception_minidump_generator.h in breakpad/src/client/ios/handler/ */ = {isa = PBXBuildFile; fileRef = 787C486D28002D4600E77633 /* ios_exception_minidump_generator.h */; };
+		787C48A0280034E700E77633 /* BreakpadDefines.h in breakpad/src/client/apple/Framework/ */ = {isa = PBXBuildFile; fileRef = 787C486728002D4600E77633 /* BreakpadDefines.h */; };
+		787C48A22800352400E77633 /* ucontext_compat.h in breakpad/src/client/mac/handler/ */ = {isa = PBXBuildFile; fileRef = 787C487528002D4600E77633 /* ucontext_compat.h */; };
+		787C48A32800352F00E77633 /* breakpad_nlist_64.h in breakpad/src/client/mac/handler/ */ = {isa = PBXBuildFile; fileRef = 787C487C28002D4600E77633 /* breakpad_nlist_64.h */; };
+		787C48A42800353A00E77633 /* dynamic_images.h in breakpad/src/client/mac/handler/ */ = {isa = PBXBuildFile; fileRef = 787C487728002D4600E77633 /* dynamic_images.h */; };
+		787C48A52800354400E77633 /* exception_handler.h in breakpad/src/client/mac/handler/ */ = {isa = PBXBuildFile; fileRef = 787C487F28002D4600E77633 /* exception_handler.h */; };
+		787C48A62800355400E77633 /* minidump_generator.h in breakpad/src/client/mac/handler/ */ = {isa = PBXBuildFile; fileRef = 787C487928002D4600E77633 /* minidump_generator.h */; };
+		787C48A72800356100E77633 /* protected_memory_allocator.h in breakpad/src/client/mac/handler/ */ = {isa = PBXBuildFile; fileRef = 787C487628002D4600E77633 /* protected_memory_allocator.h */; };
+		787C48A82800356C00E77633 /* mach_vm_compat.h in breakpad/src/client/mac/handler/ */ = {isa = PBXBuildFile; fileRef = 787C487B28002D4600E77633 /* mach_vm_compat.h */; };
+		787C48AA280035B400E77633 /* ConfigFile.h in breakpad/src/client/mac/crash_generation/ */ = {isa = PBXBuildFile; fileRef = 787C488428002D4600E77633 /* ConfigFile.h */; };
+		787C48AC280035DE00E77633 /* uploader.h in breakpad/src/client/mac/sender/ */ = {isa = PBXBuildFile; fileRef = 787C488128002D4600E77633 /* uploader.h */; };
+		787C48B02800363E00E77633 /* convert_UTF.h in breakpad/src/common/ */ = {isa = PBXBuildFile; fileRef = 787C482D28002D4500E77633 /* convert_UTF.h */; };
+		787C48B12800364600E77633 /* long_string_dictionary.h in breakpad/src/common/ */ = {isa = PBXBuildFile; fileRef = 787C485028002D4500E77633 /* long_string_dictionary.h */; };
+		787C48B22800364E00E77633 /* macros.h in breakpad/src/common/ */ = {isa = PBXBuildFile; fileRef = 787C484A28002D4500E77633 /* macros.h */; };
+		787C48B32800365700E77633 /* md5.h in breakpad/src/common/ */ = {isa = PBXBuildFile; fileRef = 787C483228002D4500E77633 /* md5.h */; };
+		787C48B42800366500E77633 /* memory_allocator.h in breakpad/src/common/ */ = {isa = PBXBuildFile; fileRef = 787C483128002D4500E77633 /* memory_allocator.h */; };
+		787C48B52800367000E77633 /* scoped_ptr.h in breakpad/src/common/ */ = {isa = PBXBuildFile; fileRef = 787C482A28002D4500E77633 /* scoped_ptr.h */; };
+		787C48B62800367800E77633 /* string_conversion.h in breakpad/src/common/ */ = {isa = PBXBuildFile; fileRef = 787C484F28002D4500E77633 /* string_conversion.h */; };
+		787C48B72800367F00E77633 /* simple_string_dictionary.h in breakpad/src/common/ */ = {isa = PBXBuildFile; fileRef = 787C482F28002D4500E77633 /* simple_string_dictionary.h */; };
+		787C48B82800368A00E77633 /* using_std_string.h in breakpad/src/common/ */ = {isa = PBXBuildFile; fileRef = 787C483328002D4500E77633 /* using_std_string.h */; };
+		787C48B9280036D100E77633 /* basictypes.h in breakpad/src/common/ */ = {isa = PBXBuildFile; fileRef = 787C484E28002D4500E77633 /* basictypes.h */; };
+		787C48BA280036F500E77633 /* linux_libc_support.h in breakpad/src/common/linux/ */ = {isa = PBXBuildFile; fileRef = 787C484C28002D4500E77633 /* linux_libc_support.h */; };
+		787C48BD280037AE00E77633 /* scoped_task_suspend-inl.h in breakpad/src/common/mac/ */ = {isa = PBXBuildFile; fileRef = 787C483728002D4500E77633 /* scoped_task_suspend-inl.h */; };
+		787C48BE280037B200E77633 /* string_utilities.h in breakpad/src/common/mac/ */ = {isa = PBXBuildFile; fileRef = 787C483928002D4500E77633 /* string_utilities.h */; };
+		787C48BF280037BA00E77633 /* byteswap.h in breakpad/src/common/mac/ */ = {isa = PBXBuildFile; fileRef = 787C483F28002D4500E77633 /* byteswap.h */; };
+		787C48C0280037BE00E77633 /* encoding_util.h in breakpad/src/common/mac/ */ = {isa = PBXBuildFile; fileRef = 787C484028002D4500E77633 /* encoding_util.h */; };
+		787C48C1280037CC00E77633 /* macho_id.h in breakpad/src/common/mac/ */ = {isa = PBXBuildFile; fileRef = 787C484128002D4500E77633 /* macho_id.h */; };
+		787C48C2280037CF00E77633 /* GTMLogger.h in breakpad/src/common/mac/ */ = {isa = PBXBuildFile; fileRef = 787C484228002D4500E77633 /* GTMLogger.h */; };
+		787C48C3280037D300E77633 /* macho_walker.h in breakpad/src/common/mac/ */ = {isa = PBXBuildFile; fileRef = 787C484428002D4500E77633 /* macho_walker.h */; };
+		787C48C4280037D900E77633 /* GTMDefines.h in breakpad/src/common/mac/ */ = {isa = PBXBuildFile; fileRef = 787C484528002D4500E77633 /* GTMDefines.h */; };
+		787C48C5280037DD00E77633 /* HTTPRequest.h in breakpad/src/common/mac/ */ = {isa = PBXBuildFile; fileRef = 787C484628002D4500E77633 /* HTTPRequest.h */; };
+		787C48C6280037E300E77633 /* file_id.h in breakpad/src/common/mac/ */ = {isa = PBXBuildFile; fileRef = 787C484728002D4500E77633 /* file_id.h */; };
+		787C48C7280037E800E77633 /* macho_utilities.h in breakpad/src/common/mac/ */ = {isa = PBXBuildFile; fileRef = 787C484828002D4500E77633 /* macho_utilities.h */; };
+		787C48C8280037EB00E77633 /* HTTPMultipartUpload.h in breakpad/src/common/mac/ */ = {isa = PBXBuildFile; fileRef = 787C484928002D4500E77633 /* HTTPMultipartUpload.h */; };
+		787C48CA2800385600E77633 /* minidump_exception_solaris.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C485328002D4500E77633 /* minidump_exception_solaris.h */; };
+		787C48CB2800385900E77633 /* minidump_exception_fuchsia.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C485428002D4500E77633 /* minidump_exception_fuchsia.h */; };
+		787C48CC2800385D00E77633 /* minidump_cpu_arm64.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C485528002D4500E77633 /* minidump_cpu_arm64.h */; };
+		787C48CD2800386100E77633 /* minidump_cpu_ppc.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C485628002D4500E77633 /* minidump_cpu_ppc.h */; };
+		787C48CE2800386B00E77633 /* minidump_format.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C485728002D4500E77633 /* minidump_format.h */; };
+		787C48CF2800387500E77633 /* minidump_exception_mac.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C485828002D4500E77633 /* minidump_exception_mac.h */; };
+		787C48D02800387C00E77633 /* minidump_cpu_mips.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C485928002D4500E77633 /* minidump_cpu_mips.h */; };
+		787C48D12800388300E77633 /* minidump_exception_win32.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C485A28002D4500E77633 /* minidump_exception_win32.h */; };
+		787C48D22800389100E77633 /* minidump_cpu_x86.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C485B28002D4500E77633 /* minidump_cpu_x86.h */; };
+		787C48D32800389500E77633 /* minidump_cpu_sparc.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C485C28002D4600E77633 /* minidump_cpu_sparc.h */; };
+		787C48D4280038A400E77633 /* minidump_cpu_amd64.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C485D28002D4600E77633 /* minidump_cpu_amd64.h */; };
+		787C48D5280038A900E77633 /* minidump_cpu_arm.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C485E28002D4600E77633 /* minidump_cpu_arm.h */; };
+		787C48D6280038AD00E77633 /* minidump_size.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C485F28002D4600E77633 /* minidump_size.h */; };
+		787C48D7280038B100E77633 /* minidump_exception_linux.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C486028002D4600E77633 /* minidump_exception_linux.h */; };
+		787C48D8280038BB00E77633 /* minidump_cpu_ppc64.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C486128002D4600E77633 /* minidump_cpu_ppc64.h */; };
+		787C48D9280038BF00E77633 /* breakpad_types.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C486228002D4600E77633 /* breakpad_types.h */; };
+		787C48DA280038C400E77633 /* minidump_exception_ps3.h in breakpad/src/google_breakpad/common/ */ = {isa = PBXBuildFile; fileRef = 787C486328002D4600E77633 /* minidump_exception_ps3.h */; };
+		787C48DB2800391C00E77633 /* long_string_dictionary.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C482B28002D4500E77633 /* long_string_dictionary.cc */; };
+		787C48DC2800391C00E77633 /* md5.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C482C28002D4500E77633 /* md5.cc */; };
+		787C48DD2800391C00E77633 /* string_conversion.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C482E28002D4500E77633 /* string_conversion.cc */; };
+		787C48DE2800391C00E77633 /* convert_UTF.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C483028002D4500E77633 /* convert_UTF.cc */; };
+		787C48DF2800391C00E77633 /* macho_walker.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C483528002D4500E77633 /* macho_walker.cc */; };
+		787C48E02800391C00E77633 /* macho_id.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C483B28002D4500E77633 /* macho_id.cc */; };
+		787C48E12800391C00E77633 /* file_id.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C483C28002D4500E77633 /* file_id.cc */; };
+		787C48E22800391C00E77633 /* macho_utilities.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C483E28002D4500E77633 /* macho_utilities.cc */; };
+		787C48E32800391C00E77633 /* string_utilities.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C484328002D4500E77633 /* string_utilities.cc */; };
+		787C48E42800391C00E77633 /* simple_string_dictionary.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C484D28002D4500E77633 /* simple_string_dictionary.cc */; };
+		787C48E52800391C00E77633 /* minidump_file_writer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C486828002D4600E77633 /* minidump_file_writer.cc */; };
+		787C48E62800391C00E77633 /* breakpad_nlist_64.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C487428002D4600E77633 /* breakpad_nlist_64.cc */; };
+		787C48E72800391C00E77633 /* exception_handler.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C487828002D4600E77633 /* exception_handler.cc */; };
+		787C48E82800391C00E77633 /* minidump_generator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C487A28002D4600E77633 /* minidump_generator.cc */; };
+		787C48E92800391C00E77633 /* dynamic_images.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C487D28002D4600E77633 /* dynamic_images.cc */; };
+		787C48EA2800391C00E77633 /* protected_memory_allocator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 787C487E28002D4600E77633 /* protected_memory_allocator.cc */; };
+		787C48EC280039DC00E77633 /* Breakpad.hpp in breakpadext */ = {isa = PBXBuildFile; fileRef = 787C482128002D4500E77633 /* Breakpad.hpp */; };
+		787C48ED280039DC00E77633 /* BreakPadExt.h in breakpadext */ = {isa = PBXBuildFile; fileRef = 787C482228002D4500E77633 /* BreakPadExt.h */; };
+		787C48EE280039DC00E77633 /* BreakPadExt.hpp in breakpadext */ = {isa = PBXBuildFile; fileRef = 787C482528002D4500E77633 /* BreakPadExt.hpp */; };
+		787C48EF280039DC00E77633 /* BreakPadExtController.h in breakpadext */ = {isa = PBXBuildFile; fileRef = 787C482628002D4500E77633 /* BreakPadExtController.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		787C480E280029E500E77633 /* breakpad/src/client/ */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/client;
+			dstSubfolderSpec = 16;
+			files = (
+				787C48992800312700E77633 /* minidump_file_writer.h in breakpad/src/client/ */,
+				787C48982800311C00E77633 /* minidump_file_writer-inl.h in breakpad/src/client/ */,
+			);
+			name = breakpad/src/client/;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		787C489A2800313E00E77633 /* breakpad/src/client/ios/ */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/client/ios;
+			dstSubfolderSpec = 16;
+			files = (
+				787C489C2800316C00E77633 /* BreakpadController.h in breakpad/src/client/ios/ */,
+				787C489B2800315800E77633 /* Breakpad.h in breakpad/src/client/ios/ */,
+			);
+			name = breakpad/src/client/ios/;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		787C489D2800342E00E77633 /* breakpad/src/client/ios/handler/ */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/client/ios/handler;
+			dstSubfolderSpec = 16;
+			files = (
+				787C489E2800346100E77633 /* ios_exception_minidump_generator.h in breakpad/src/client/ios/handler/ */,
+			);
+			name = breakpad/src/client/ios/handler/;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		787C489F2800346900E77633 /* breakpad/src/client/apple/Framework/ */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/client/apple/Framework;
+			dstSubfolderSpec = 16;
+			files = (
+				787C48A0280034E700E77633 /* BreakpadDefines.h in breakpad/src/client/apple/Framework/ */,
+			);
+			name = breakpad/src/client/apple/Framework/;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		787C48A1280034ED00E77633 /* breakpad/src/client/mac/handler/ */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/client/mac/handler;
+			dstSubfolderSpec = 16;
+			files = (
+				787C48A82800356C00E77633 /* mach_vm_compat.h in breakpad/src/client/mac/handler/ */,
+				787C48A72800356100E77633 /* protected_memory_allocator.h in breakpad/src/client/mac/handler/ */,
+				787C48A62800355400E77633 /* minidump_generator.h in breakpad/src/client/mac/handler/ */,
+				787C48A52800354400E77633 /* exception_handler.h in breakpad/src/client/mac/handler/ */,
+				787C48A42800353A00E77633 /* dynamic_images.h in breakpad/src/client/mac/handler/ */,
+				787C48A32800352F00E77633 /* breakpad_nlist_64.h in breakpad/src/client/mac/handler/ */,
+				787C48A22800352400E77633 /* ucontext_compat.h in breakpad/src/client/mac/handler/ */,
+			);
+			name = breakpad/src/client/mac/handler/;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		787C48A92800358300E77633 /* breakpad/src/client/mac/crash_generation/ */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/client/mac/crash_generation;
+			dstSubfolderSpec = 16;
+			files = (
+				787C48AA280035B400E77633 /* ConfigFile.h in breakpad/src/client/mac/crash_generation/ */,
+			);
+			name = breakpad/src/client/mac/crash_generation/;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		787C48AB280035BE00E77633 /* breakpad/src/client/mac/sender/ */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/client/mac/sender;
+			dstSubfolderSpec = 16;
+			files = (
+				787C48AC280035DE00E77633 /* uploader.h in breakpad/src/client/mac/sender/ */,
+			);
+			name = breakpad/src/client/mac/sender/;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		787C48AD280035EB00E77633 /* breakpad/src/common/linux/ */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/common/linux;
+			dstSubfolderSpec = 16;
+			files = (
+				787C48BA280036F500E77633 /* linux_libc_support.h in breakpad/src/common/linux/ */,
+			);
+			name = breakpad/src/common/linux/;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		787C48AF2800361400E77633 /* breakpad/src/common/ */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/common;
+			dstSubfolderSpec = 16;
+			files = (
+				787C48B82800368A00E77633 /* using_std_string.h in breakpad/src/common/ */,
+				787C48B72800367F00E77633 /* simple_string_dictionary.h in breakpad/src/common/ */,
+				787C48B62800367800E77633 /* string_conversion.h in breakpad/src/common/ */,
+				787C48B52800367000E77633 /* scoped_ptr.h in breakpad/src/common/ */,
+				787C48B42800366500E77633 /* memory_allocator.h in breakpad/src/common/ */,
+				787C48B32800365700E77633 /* md5.h in breakpad/src/common/ */,
+				787C48B22800364E00E77633 /* macros.h in breakpad/src/common/ */,
+				787C48B12800364600E77633 /* long_string_dictionary.h in breakpad/src/common/ */,
+				787C48B02800363E00E77633 /* convert_UTF.h in breakpad/src/common/ */,
+				787C48B9280036D100E77633 /* basictypes.h in breakpad/src/common/ */,
+			);
+			name = breakpad/src/common/;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		787C48BB2800370A00E77633 /* breakpad/src/common/mac/ */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/common/mac;
+			dstSubfolderSpec = 16;
+			files = (
+				787C48C4280037D900E77633 /* GTMDefines.h in breakpad/src/common/mac/ */,
+				787C48BD280037AE00E77633 /* scoped_task_suspend-inl.h in breakpad/src/common/mac/ */,
+				787C48BE280037B200E77633 /* string_utilities.h in breakpad/src/common/mac/ */,
+				787C48BF280037BA00E77633 /* byteswap.h in breakpad/src/common/mac/ */,
+				787C48C0280037BE00E77633 /* encoding_util.h in breakpad/src/common/mac/ */,
+				787C48C1280037CC00E77633 /* macho_id.h in breakpad/src/common/mac/ */,
+				787C48C2280037CF00E77633 /* GTMLogger.h in breakpad/src/common/mac/ */,
+				787C48C3280037D300E77633 /* macho_walker.h in breakpad/src/common/mac/ */,
+				787C48C5280037DD00E77633 /* HTTPRequest.h in breakpad/src/common/mac/ */,
+				787C48C6280037E300E77633 /* file_id.h in breakpad/src/common/mac/ */,
+				787C48C7280037E800E77633 /* macho_utilities.h in breakpad/src/common/mac/ */,
+				787C48C8280037EB00E77633 /* HTTPMultipartUpload.h in breakpad/src/common/mac/ */,
+			);
+			name = breakpad/src/common/mac/;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		787C48C92800381000E77633 /* breakpad/src/google_breakpad/common/ */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/google_breakpad/common;
+			dstSubfolderSpec = 16;
+			files = (
+				787C48CD2800386100E77633 /* minidump_cpu_ppc.h in breakpad/src/google_breakpad/common/ */,
+				787C48CA2800385600E77633 /* minidump_exception_solaris.h in breakpad/src/google_breakpad/common/ */,
+				787C48CB2800385900E77633 /* minidump_exception_fuchsia.h in breakpad/src/google_breakpad/common/ */,
+				787C48CC2800385D00E77633 /* minidump_cpu_arm64.h in breakpad/src/google_breakpad/common/ */,
+				787C48CE2800386B00E77633 /* minidump_format.h in breakpad/src/google_breakpad/common/ */,
+				787C48CF2800387500E77633 /* minidump_exception_mac.h in breakpad/src/google_breakpad/common/ */,
+				787C48D02800387C00E77633 /* minidump_cpu_mips.h in breakpad/src/google_breakpad/common/ */,
+				787C48D12800388300E77633 /* minidump_exception_win32.h in breakpad/src/google_breakpad/common/ */,
+				787C48D22800389100E77633 /* minidump_cpu_x86.h in breakpad/src/google_breakpad/common/ */,
+				787C48D32800389500E77633 /* minidump_cpu_sparc.h in breakpad/src/google_breakpad/common/ */,
+				787C48D4280038A400E77633 /* minidump_cpu_amd64.h in breakpad/src/google_breakpad/common/ */,
+				787C48D5280038A900E77633 /* minidump_cpu_arm.h in breakpad/src/google_breakpad/common/ */,
+				787C48D6280038AD00E77633 /* minidump_size.h in breakpad/src/google_breakpad/common/ */,
+				787C48D7280038B100E77633 /* minidump_exception_linux.h in breakpad/src/google_breakpad/common/ */,
+				787C48D8280038BB00E77633 /* minidump_cpu_ppc64.h in breakpad/src/google_breakpad/common/ */,
+				787C48D9280038BF00E77633 /* breakpad_types.h in breakpad/src/google_breakpad/common/ */,
+				787C48DA280038C400E77633 /* minidump_exception_ps3.h in breakpad/src/google_breakpad/common/ */,
+			);
+			name = breakpad/src/google_breakpad/common/;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		787C48EB2800393400E77633 /* breakpadext */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include;
+			dstSubfolderSpec = 16;
+			files = (
+				787C48EC280039DC00E77633 /* Breakpad.hpp in breakpadext */,
+				787C48ED280039DC00E77633 /* BreakPadExt.h in breakpadext */,
+				787C48EE280039DC00E77633 /* BreakPadExt.hpp in breakpadext */,
+				787C48EF280039DC00E77633 /* BreakPadExtController.h in breakpadext */,
+			);
+			name = breakpadext;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		787C4810280029E500E77633 /* libBreakPadExt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBreakPadExt.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		787C482128002D4500E77633 /* Breakpad.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Breakpad.hpp; sourceTree = "<group>"; };
+		787C482228002D4500E77633 /* BreakPadExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BreakPadExt.h; sourceTree = "<group>"; };
+		787C482328002D4500E77633 /* BreakPadExtController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BreakPadExtController.mm; sourceTree = "<group>"; };
+		787C482428002D4500E77633 /* BreakPadExt.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BreakPadExt.mm; sourceTree = "<group>"; };
+		787C482528002D4500E77633 /* BreakPadExt.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BreakPadExt.hpp; sourceTree = "<group>"; };
+		787C482628002D4500E77633 /* BreakPadExtController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BreakPadExtController.h; sourceTree = "<group>"; };
+		787C482A28002D4500E77633 /* scoped_ptr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scoped_ptr.h; sourceTree = "<group>"; };
+		787C482B28002D4500E77633 /* long_string_dictionary.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = long_string_dictionary.cc; sourceTree = "<group>"; };
+		787C482C28002D4500E77633 /* md5.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = md5.cc; sourceTree = "<group>"; };
+		787C482D28002D4500E77633 /* convert_UTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = convert_UTF.h; sourceTree = "<group>"; };
+		787C482E28002D4500E77633 /* string_conversion.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = string_conversion.cc; sourceTree = "<group>"; };
+		787C482F28002D4500E77633 /* simple_string_dictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simple_string_dictionary.h; sourceTree = "<group>"; };
+		787C483028002D4500E77633 /* convert_UTF.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = convert_UTF.cc; sourceTree = "<group>"; };
+		787C483128002D4500E77633 /* memory_allocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory_allocator.h; sourceTree = "<group>"; };
+		787C483228002D4500E77633 /* md5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
+		787C483328002D4500E77633 /* using_std_string.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = using_std_string.h; sourceTree = "<group>"; };
+		787C483528002D4500E77633 /* macho_walker.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = macho_walker.cc; sourceTree = "<group>"; };
+		787C483628002D4500E77633 /* encoding_util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = encoding_util.m; sourceTree = "<group>"; };
+		787C483728002D4500E77633 /* scoped_task_suspend-inl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "scoped_task_suspend-inl.h"; sourceTree = "<group>"; };
+		787C483828002D4500E77633 /* GTMLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTMLogger.m; sourceTree = "<group>"; };
+		787C483928002D4500E77633 /* string_utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = string_utilities.h; sourceTree = "<group>"; };
+		787C483A28002D4500E77633 /* HTTPRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = "<group>"; };
+		787C483B28002D4500E77633 /* macho_id.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = macho_id.cc; sourceTree = "<group>"; };
+		787C483C28002D4500E77633 /* file_id.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = file_id.cc; sourceTree = "<group>"; };
+		787C483D28002D4500E77633 /* HTTPMultipartUpload.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPMultipartUpload.m; sourceTree = "<group>"; };
+		787C483E28002D4500E77633 /* macho_utilities.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = macho_utilities.cc; sourceTree = "<group>"; };
+		787C483F28002D4500E77633 /* byteswap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = byteswap.h; sourceTree = "<group>"; };
+		787C484028002D4500E77633 /* encoding_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = encoding_util.h; sourceTree = "<group>"; };
+		787C484128002D4500E77633 /* macho_id.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macho_id.h; sourceTree = "<group>"; };
+		787C484228002D4500E77633 /* GTMLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMLogger.h; sourceTree = "<group>"; };
+		787C484328002D4500E77633 /* string_utilities.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = string_utilities.cc; sourceTree = "<group>"; };
+		787C484428002D4500E77633 /* macho_walker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macho_walker.h; sourceTree = "<group>"; };
+		787C484528002D4500E77633 /* GTMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		787C484628002D4500E77633 /* HTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
+		787C484728002D4500E77633 /* file_id.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = file_id.h; sourceTree = "<group>"; };
+		787C484828002D4500E77633 /* macho_utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macho_utilities.h; sourceTree = "<group>"; };
+		787C484928002D4500E77633 /* HTTPMultipartUpload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPMultipartUpload.h; sourceTree = "<group>"; };
+		787C484A28002D4500E77633 /* macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
+		787C484C28002D4500E77633 /* linux_libc_support.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = linux_libc_support.h; sourceTree = "<group>"; };
+		787C484D28002D4500E77633 /* simple_string_dictionary.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = simple_string_dictionary.cc; sourceTree = "<group>"; };
+		787C484E28002D4500E77633 /* basictypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = basictypes.h; sourceTree = "<group>"; };
+		787C484F28002D4500E77633 /* string_conversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = string_conversion.h; sourceTree = "<group>"; };
+		787C485028002D4500E77633 /* long_string_dictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = long_string_dictionary.h; sourceTree = "<group>"; };
+		787C485328002D4500E77633 /* minidump_exception_solaris.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_exception_solaris.h; sourceTree = "<group>"; };
+		787C485428002D4500E77633 /* minidump_exception_fuchsia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_exception_fuchsia.h; sourceTree = "<group>"; };
+		787C485528002D4500E77633 /* minidump_cpu_arm64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_cpu_arm64.h; sourceTree = "<group>"; };
+		787C485628002D4500E77633 /* minidump_cpu_ppc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_cpu_ppc.h; sourceTree = "<group>"; };
+		787C485728002D4500E77633 /* minidump_format.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_format.h; sourceTree = "<group>"; };
+		787C485828002D4500E77633 /* minidump_exception_mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_exception_mac.h; sourceTree = "<group>"; };
+		787C485928002D4500E77633 /* minidump_cpu_mips.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_cpu_mips.h; sourceTree = "<group>"; };
+		787C485A28002D4500E77633 /* minidump_exception_win32.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_exception_win32.h; sourceTree = "<group>"; };
+		787C485B28002D4500E77633 /* minidump_cpu_x86.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_cpu_x86.h; sourceTree = "<group>"; };
+		787C485C28002D4600E77633 /* minidump_cpu_sparc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_cpu_sparc.h; sourceTree = "<group>"; };
+		787C485D28002D4600E77633 /* minidump_cpu_amd64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_cpu_amd64.h; sourceTree = "<group>"; };
+		787C485E28002D4600E77633 /* minidump_cpu_arm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_cpu_arm.h; sourceTree = "<group>"; };
+		787C485F28002D4600E77633 /* minidump_size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_size.h; sourceTree = "<group>"; };
+		787C486028002D4600E77633 /* minidump_exception_linux.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_exception_linux.h; sourceTree = "<group>"; };
+		787C486128002D4600E77633 /* minidump_cpu_ppc64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_cpu_ppc64.h; sourceTree = "<group>"; };
+		787C486228002D4600E77633 /* breakpad_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = breakpad_types.h; sourceTree = "<group>"; };
+		787C486328002D4600E77633 /* minidump_exception_ps3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_exception_ps3.h; sourceTree = "<group>"; };
+		787C486728002D4600E77633 /* BreakpadDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BreakpadDefines.h; sourceTree = "<group>"; };
+		787C486828002D4600E77633 /* minidump_file_writer.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = minidump_file_writer.cc; sourceTree = "<group>"; };
+		787C486928002D4600E77633 /* minidump_file_writer-inl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "minidump_file_writer-inl.h"; sourceTree = "<group>"; };
+		787C486C28002D4600E77633 /* ios_exception_minidump_generator.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ios_exception_minidump_generator.mm; sourceTree = "<group>"; };
+		787C486D28002D4600E77633 /* ios_exception_minidump_generator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_exception_minidump_generator.h; sourceTree = "<group>"; };
+		787C486E28002D4600E77633 /* Breakpad.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Breakpad.mm; sourceTree = "<group>"; };
+		787C486F28002D4600E77633 /* Breakpad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Breakpad.h; sourceTree = "<group>"; };
+		787C487028002D4600E77633 /* BreakpadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BreakpadController.h; sourceTree = "<group>"; };
+		787C487128002D4600E77633 /* BreakpadController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BreakpadController.mm; sourceTree = "<group>"; };
+		787C487428002D4600E77633 /* breakpad_nlist_64.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = breakpad_nlist_64.cc; sourceTree = "<group>"; };
+		787C487528002D4600E77633 /* ucontext_compat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ucontext_compat.h; sourceTree = "<group>"; };
+		787C487628002D4600E77633 /* protected_memory_allocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = protected_memory_allocator.h; sourceTree = "<group>"; };
+		787C487728002D4600E77633 /* dynamic_images.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dynamic_images.h; sourceTree = "<group>"; };
+		787C487828002D4600E77633 /* exception_handler.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = exception_handler.cc; sourceTree = "<group>"; };
+		787C487928002D4600E77633 /* minidump_generator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_generator.h; sourceTree = "<group>"; };
+		787C487A28002D4600E77633 /* minidump_generator.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = minidump_generator.cc; sourceTree = "<group>"; };
+		787C487B28002D4600E77633 /* mach_vm_compat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mach_vm_compat.h; sourceTree = "<group>"; };
+		787C487C28002D4600E77633 /* breakpad_nlist_64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = breakpad_nlist_64.h; sourceTree = "<group>"; };
+		787C487D28002D4600E77633 /* dynamic_images.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dynamic_images.cc; sourceTree = "<group>"; };
+		787C487E28002D4600E77633 /* protected_memory_allocator.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = protected_memory_allocator.cc; sourceTree = "<group>"; };
+		787C487F28002D4600E77633 /* exception_handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exception_handler.h; sourceTree = "<group>"; };
+		787C488128002D4600E77633 /* uploader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uploader.h; sourceTree = "<group>"; };
+		787C488228002D4600E77633 /* uploader.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = uploader.mm; sourceTree = "<group>"; };
+		787C488428002D4600E77633 /* ConfigFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigFile.h; sourceTree = "<group>"; };
+		787C488528002D4600E77633 /* ConfigFile.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ConfigFile.mm; sourceTree = "<group>"; };
+		787C488628002D4600E77633 /* minidump_file_writer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minidump_file_writer.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		595AABFBF160881A8DCE388B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		787C4807280029E500E77633 = {
+			isa = PBXGroup;
+			children = (
+				787C481D28002D4500E77633 /* BreakPadExt */,
+				787C4811280029E500E77633 /* Products */,
+				595AABFBF160881A8DCE388B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		787C4811280029E500E77633 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				787C4810280029E500E77633 /* libBreakPadExt.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		787C481D28002D4500E77633 /* BreakPadExt */ = {
+			isa = PBXGroup;
+			children = (
+				787C481E28002D4500E77633 /* Classes */,
+				787C488B28002D4600E77633 /* Assets */,
+			);
+			path = BreakPadExt;
+			sourceTree = "<group>";
+		};
+		787C481E28002D4500E77633 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				787C482028002D4500E77633 /* breakpadext */,
+				787C482728002D4500E77633 /* breakpad */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		787C482028002D4500E77633 /* breakpadext */ = {
+			isa = PBXGroup;
+			children = (
+				787C482128002D4500E77633 /* Breakpad.hpp */,
+				787C482228002D4500E77633 /* BreakPadExt.h */,
+				787C482328002D4500E77633 /* BreakPadExtController.mm */,
+				787C482428002D4500E77633 /* BreakPadExt.mm */,
+				787C482528002D4500E77633 /* BreakPadExt.hpp */,
+				787C482628002D4500E77633 /* BreakPadExtController.h */,
+			);
+			path = breakpadext;
+			sourceTree = "<group>";
+		};
+		787C482728002D4500E77633 /* breakpad */ = {
+			isa = PBXGroup;
+			children = (
+				787C482828002D4500E77633 /* src */,
+			);
+			path = breakpad;
+			sourceTree = "<group>";
+		};
+		787C482828002D4500E77633 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				787C482928002D4500E77633 /* common */,
+				787C485128002D4500E77633 /* google_breakpad */,
+				787C486428002D4600E77633 /* client */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		787C482928002D4500E77633 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				787C482A28002D4500E77633 /* scoped_ptr.h */,
+				787C482B28002D4500E77633 /* long_string_dictionary.cc */,
+				787C482C28002D4500E77633 /* md5.cc */,
+				787C482D28002D4500E77633 /* convert_UTF.h */,
+				787C482E28002D4500E77633 /* string_conversion.cc */,
+				787C482F28002D4500E77633 /* simple_string_dictionary.h */,
+				787C483028002D4500E77633 /* convert_UTF.cc */,
+				787C483128002D4500E77633 /* memory_allocator.h */,
+				787C483228002D4500E77633 /* md5.h */,
+				787C483328002D4500E77633 /* using_std_string.h */,
+				787C483428002D4500E77633 /* mac */,
+				787C484A28002D4500E77633 /* macros.h */,
+				787C484B28002D4500E77633 /* linux */,
+				787C484D28002D4500E77633 /* simple_string_dictionary.cc */,
+				787C484E28002D4500E77633 /* basictypes.h */,
+				787C484F28002D4500E77633 /* string_conversion.h */,
+				787C485028002D4500E77633 /* long_string_dictionary.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		787C483428002D4500E77633 /* mac */ = {
+			isa = PBXGroup;
+			children = (
+				787C483528002D4500E77633 /* macho_walker.cc */,
+				787C483628002D4500E77633 /* encoding_util.m */,
+				787C483728002D4500E77633 /* scoped_task_suspend-inl.h */,
+				787C483828002D4500E77633 /* GTMLogger.m */,
+				787C483928002D4500E77633 /* string_utilities.h */,
+				787C483A28002D4500E77633 /* HTTPRequest.m */,
+				787C483B28002D4500E77633 /* macho_id.cc */,
+				787C483C28002D4500E77633 /* file_id.cc */,
+				787C483D28002D4500E77633 /* HTTPMultipartUpload.m */,
+				787C483E28002D4500E77633 /* macho_utilities.cc */,
+				787C483F28002D4500E77633 /* byteswap.h */,
+				787C484028002D4500E77633 /* encoding_util.h */,
+				787C484128002D4500E77633 /* macho_id.h */,
+				787C484228002D4500E77633 /* GTMLogger.h */,
+				787C484328002D4500E77633 /* string_utilities.cc */,
+				787C484428002D4500E77633 /* macho_walker.h */,
+				787C484528002D4500E77633 /* GTMDefines.h */,
+				787C484628002D4500E77633 /* HTTPRequest.h */,
+				787C484728002D4500E77633 /* file_id.h */,
+				787C484828002D4500E77633 /* macho_utilities.h */,
+				787C484928002D4500E77633 /* HTTPMultipartUpload.h */,
+			);
+			path = mac;
+			sourceTree = "<group>";
+		};
+		787C484B28002D4500E77633 /* linux */ = {
+			isa = PBXGroup;
+			children = (
+				787C484C28002D4500E77633 /* linux_libc_support.h */,
+			);
+			path = linux;
+			sourceTree = "<group>";
+		};
+		787C485128002D4500E77633 /* google_breakpad */ = {
+			isa = PBXGroup;
+			children = (
+				787C485228002D4500E77633 /* common */,
+			);
+			path = google_breakpad;
+			sourceTree = "<group>";
+		};
+		787C485228002D4500E77633 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				787C485328002D4500E77633 /* minidump_exception_solaris.h */,
+				787C485428002D4500E77633 /* minidump_exception_fuchsia.h */,
+				787C485528002D4500E77633 /* minidump_cpu_arm64.h */,
+				787C485628002D4500E77633 /* minidump_cpu_ppc.h */,
+				787C485728002D4500E77633 /* minidump_format.h */,
+				787C485828002D4500E77633 /* minidump_exception_mac.h */,
+				787C485928002D4500E77633 /* minidump_cpu_mips.h */,
+				787C485A28002D4500E77633 /* minidump_exception_win32.h */,
+				787C485B28002D4500E77633 /* minidump_cpu_x86.h */,
+				787C485C28002D4600E77633 /* minidump_cpu_sparc.h */,
+				787C485D28002D4600E77633 /* minidump_cpu_amd64.h */,
+				787C485E28002D4600E77633 /* minidump_cpu_arm.h */,
+				787C485F28002D4600E77633 /* minidump_size.h */,
+				787C486028002D4600E77633 /* minidump_exception_linux.h */,
+				787C486128002D4600E77633 /* minidump_cpu_ppc64.h */,
+				787C486228002D4600E77633 /* breakpad_types.h */,
+				787C486328002D4600E77633 /* minidump_exception_ps3.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		787C486428002D4600E77633 /* client */ = {
+			isa = PBXGroup;
+			children = (
+				787C486528002D4600E77633 /* apple */,
+				787C486828002D4600E77633 /* minidump_file_writer.cc */,
+				787C486928002D4600E77633 /* minidump_file_writer-inl.h */,
+				787C486A28002D4600E77633 /* ios */,
+				787C487228002D4600E77633 /* mac */,
+				787C488628002D4600E77633 /* minidump_file_writer.h */,
+			);
+			path = client;
+			sourceTree = "<group>";
+		};
+		787C486528002D4600E77633 /* apple */ = {
+			isa = PBXGroup;
+			children = (
+				787C486628002D4600E77633 /* Framework */,
+			);
+			path = apple;
+			sourceTree = "<group>";
+		};
+		787C486628002D4600E77633 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				787C486728002D4600E77633 /* BreakpadDefines.h */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		787C486A28002D4600E77633 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				787C486B28002D4600E77633 /* handler */,
+				787C486E28002D4600E77633 /* Breakpad.mm */,
+				787C486F28002D4600E77633 /* Breakpad.h */,
+				787C487028002D4600E77633 /* BreakpadController.h */,
+				787C487128002D4600E77633 /* BreakpadController.mm */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		787C486B28002D4600E77633 /* handler */ = {
+			isa = PBXGroup;
+			children = (
+				787C486C28002D4600E77633 /* ios_exception_minidump_generator.mm */,
+				787C486D28002D4600E77633 /* ios_exception_minidump_generator.h */,
+			);
+			path = handler;
+			sourceTree = "<group>";
+		};
+		787C487228002D4600E77633 /* mac */ = {
+			isa = PBXGroup;
+			children = (
+				787C487328002D4600E77633 /* handler */,
+				787C488028002D4600E77633 /* sender */,
+				787C488328002D4600E77633 /* crash_generation */,
+			);
+			path = mac;
+			sourceTree = "<group>";
+		};
+		787C487328002D4600E77633 /* handler */ = {
+			isa = PBXGroup;
+			children = (
+				787C487428002D4600E77633 /* breakpad_nlist_64.cc */,
+				787C487528002D4600E77633 /* ucontext_compat.h */,
+				787C487628002D4600E77633 /* protected_memory_allocator.h */,
+				787C487728002D4600E77633 /* dynamic_images.h */,
+				787C487828002D4600E77633 /* exception_handler.cc */,
+				787C487928002D4600E77633 /* minidump_generator.h */,
+				787C487A28002D4600E77633 /* minidump_generator.cc */,
+				787C487B28002D4600E77633 /* mach_vm_compat.h */,
+				787C487C28002D4600E77633 /* breakpad_nlist_64.h */,
+				787C487D28002D4600E77633 /* dynamic_images.cc */,
+				787C487E28002D4600E77633 /* protected_memory_allocator.cc */,
+				787C487F28002D4600E77633 /* exception_handler.h */,
+			);
+			path = handler;
+			sourceTree = "<group>";
+		};
+		787C488028002D4600E77633 /* sender */ = {
+			isa = PBXGroup;
+			children = (
+				787C488128002D4600E77633 /* uploader.h */,
+				787C488228002D4600E77633 /* uploader.mm */,
+			);
+			path = sender;
+			sourceTree = "<group>";
+		};
+		787C488328002D4600E77633 /* crash_generation */ = {
+			isa = PBXGroup;
+			children = (
+				787C488428002D4600E77633 /* ConfigFile.h */,
+				787C488528002D4600E77633 /* ConfigFile.mm */,
+			);
+			path = crash_generation;
+			sourceTree = "<group>";
+		};
+		787C488B28002D4600E77633 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		787C480F280029E500E77633 /* BreakPadExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 787C4819280029E500E77633 /* Build configuration list for PBXNativeTarget "BreakPadExt" */;
+			buildPhases = (
+				787C480C280029E500E77633 /* Sources */,
+				787C480E280029E500E77633 /* breakpad/src/client/ */,
+				787C489A2800313E00E77633 /* breakpad/src/client/ios/ */,
+				787C489D2800342E00E77633 /* breakpad/src/client/ios/handler/ */,
+				787C489F2800346900E77633 /* breakpad/src/client/apple/Framework/ */,
+				787C48A1280034ED00E77633 /* breakpad/src/client/mac/handler/ */,
+				787C48A92800358300E77633 /* breakpad/src/client/mac/crash_generation/ */,
+				787C48AB280035BE00E77633 /* breakpad/src/client/mac/sender/ */,
+				787C48AF2800361400E77633 /* breakpad/src/common/ */,
+				787C48AD280035EB00E77633 /* breakpad/src/common/linux/ */,
+				787C48BB2800370A00E77633 /* breakpad/src/common/mac/ */,
+				787C48C92800381000E77633 /* breakpad/src/google_breakpad/common/ */,
+				787C48EB2800393400E77633 /* breakpadext */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BreakPadExt;
+			productName = BreakPadExt;
+			productReference = 787C4810280029E500E77633 /* libBreakPadExt.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		787C4808280029E500E77633 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					787C480F280029E500E77633 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 787C480B280029E500E77633 /* Build configuration list for PBXProject "BreakPadExt" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 787C4807280029E500E77633;
+			productRefGroup = 787C4811280029E500E77633 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				787C480F280029E500E77633 /* BreakPadExt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		787C480C280029E500E77633 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				787C48DB2800391C00E77633 /* long_string_dictionary.cc in Sources */,
+				787C48DC2800391C00E77633 /* md5.cc in Sources */,
+				787C48DD2800391C00E77633 /* string_conversion.cc in Sources */,
+				787C48DE2800391C00E77633 /* convert_UTF.cc in Sources */,
+				787C48DF2800391C00E77633 /* macho_walker.cc in Sources */,
+				787C48E02800391C00E77633 /* macho_id.cc in Sources */,
+				787C48E12800391C00E77633 /* file_id.cc in Sources */,
+				787C48E22800391C00E77633 /* macho_utilities.cc in Sources */,
+				787C48E32800391C00E77633 /* string_utilities.cc in Sources */,
+				787C48E42800391C00E77633 /* simple_string_dictionary.cc in Sources */,
+				787C48E52800391C00E77633 /* minidump_file_writer.cc in Sources */,
+				787C48E62800391C00E77633 /* breakpad_nlist_64.cc in Sources */,
+				787C48E72800391C00E77633 /* exception_handler.cc in Sources */,
+				787C48E82800391C00E77633 /* minidump_generator.cc in Sources */,
+				787C48E92800391C00E77633 /* dynamic_images.cc in Sources */,
+				787C48EA2800391C00E77633 /* protected_memory_allocator.cc in Sources */,
+				787C489428002DE400E77633 /* encoding_util.m in Sources */,
+				787C489528002DE400E77633 /* GTMLogger.m in Sources */,
+				787C489628002DE400E77633 /* HTTPRequest.m in Sources */,
+				787C489728002DE400E77633 /* HTTPMultipartUpload.m in Sources */,
+				787C488F28002DDC00E77633 /* ios_exception_minidump_generator.mm in Sources */,
+				787C489028002DDC00E77633 /* Breakpad.mm in Sources */,
+				787C489128002DDC00E77633 /* BreakpadController.mm in Sources */,
+				787C489228002DDC00E77633 /* uploader.mm in Sources */,
+				787C489328002DDC00E77633 /* ConfigFile.mm in Sources */,
+				787C488D28002DDC00E77633 /* BreakPadExtController.mm in Sources */,
+				787C488E28002DDC00E77633 /* BreakPadExt.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		787C4817280029E500E77633 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		787C4818280029E500E77633 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		787C481A280029E500E77633 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4C39GTGS9D;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/BreakPadExt/Classes/breakpad/src/";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		787C481B280029E500E77633 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4C39GTGS9D;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/BreakPadExt/Classes/breakpad/src/";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		787C480B280029E500E77633 /* Build configuration list for PBXProject "BreakPadExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				787C4817280029E500E77633 /* Debug */,
+				787C4818280029E500E77633 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		787C4819280029E500E77633 /* Build configuration list for PBXNativeTarget "BreakPadExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				787C481A280029E500E77633 /* Debug */,
+				787C481B280029E500E77633 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 787C4808280029E500E77633 /* Project object */;
+}
