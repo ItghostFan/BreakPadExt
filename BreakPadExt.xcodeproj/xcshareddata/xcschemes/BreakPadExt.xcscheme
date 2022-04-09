@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1310"
+   LastUpgradeVersion = "1330"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "78F6E2EB27DB4D9F004A407B"
-               BuildableName = "BreakPadExt_Example.app"
-               BlueprintName = "BreakPadExt_Example"
+               BlueprintIdentifier = "787C480F280029E500E77633"
+               BuildableName = "libBreakPadExt.a"
+               BlueprintName = "BreakPadExt"
+               ReferencedContainer = "container:BreakPadExt.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "787C48F4280041DC00E77633"
+               BuildableName = "BreakPadExtDylib.framework"
+               BlueprintName = "BreakPadExtDylib"
                ReferencedContainer = "container:BreakPadExt.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,30 +42,10 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "78F6E30927DB4DA1004A407B"
-               BuildableName = "BreakPadExtTests.xctest"
-               BlueprintName = "BreakPadExtTests"
-               ReferencedContainer = "container:BreakPadExt.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "78F6E31327DB4DA1004A407B"
-               BuildableName = "BreakPadExtUITests.xctest"
-               BlueprintName = "BreakPadExtUITests"
-               ReferencedContainer = "container:BreakPadExt.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -60,16 +54,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "78F6E2EB27DB4D9F004A407B"
-            BuildableName = "BreakPadExt_Example.app"
-            BlueprintName = "BreakPadExt_Example"
-            ReferencedContainer = "container:BreakPadExt.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -77,16 +61,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "78F6E2EB27DB4D9F004A407B"
-            BuildableName = "BreakPadExt_Example.app"
-            BlueprintName = "BreakPadExt_Example"
+            BlueprintIdentifier = "787C480F280029E500E77633"
+            BuildableName = "libBreakPadExt.a"
+            BlueprintName = "BreakPadExt"
             ReferencedContainer = "container:BreakPadExt.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
