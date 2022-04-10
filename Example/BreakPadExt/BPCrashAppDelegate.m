@@ -11,10 +11,16 @@
 
 #if BREAK_PAD_EXT_IMPORTED
 
+#define BREAK_PAD_EXT_FRAME_IMPORTED __has_include("BreakPadExtDylib.h")
+
+#if BREAK_PAD_EXT_FRAME_IMPORTED
+#import "BreakPadExtDylib.h"
+#endif  // #if BREAK_PAD_EXT_FRAME_IMPORTED
+
 #define USE_GOOGLE_BREAKPAD 1
 
 #if USE_GOOGLE_BREAKPAD
-#import "BreakpadController.h"
+#import "client/ios/BreakpadController.h"
 typedef BreakpadController BreakpadCrashController;
 #else
 #import "BreakPadExtController.h"
@@ -36,8 +42,17 @@ typedef BreakPadExtController BreakpadCrashController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 #if BREAK_PAD_EXT_IMPORTED
+    
+#if BREAK_PAD_EXT_FRAME_IMPORTED
+    NSLog(@"%f", BreakPadExtDylibVersionNumber);
+#endif  // #if BREAK_PAD_EXT_FRAME_IMPORTED
+    
     NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+#if USE_GOOGLE_BREAKPAD
+    self.crashController = BreakpadController.sharedInstance;
+#else
     self.crashController = [BreakpadCrashController new];
+#endif  // #if USE_GOOGLE_BREAKPAD
     [self.crashController updateConfiguration:
          @{
              @BREAKPAD_VENDOR: @"Test",
@@ -46,14 +61,14 @@ typedef BreakPadExtController BreakpadCrashController;
          }
     ];
     [self.crashController start:NO];
-#endif
+#endif  // #if BREAK_PAD_EXT_IMPORTED
     return YES;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 #if BREAK_PAD_EXT_IMPORTED
     [self.crashController stop];
-#endif
+#endif  // #if BREAK_PAD_EXT_IMPORTED
 }
 
 
