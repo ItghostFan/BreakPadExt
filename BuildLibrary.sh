@@ -49,7 +49,6 @@ echoStep "Build Simulator Target"
 
 xcodebuild -project $project -scheme $scheme -sdk iphonesimulator -configuration Release
 
-
 echoStep "Build iPhone Target"
 
 xcodebuild -project $project -scheme $scheme -sdk iphoneos -configuration Release
@@ -60,10 +59,12 @@ iphoneResults=(`ls $iphoneBuildDir`)
 simulatorLibs=()
 simulatorLibIncludes=()
 simulatorFrameworks=()
+simulatorDSYMs=()
 
 iphoneLibs=()
 iphoneLibIncludes=()
 iphoneFrameworks=()
+iphoneDSYMs=()
 
 fatLibs=()
 
@@ -79,8 +80,11 @@ do
 	then
 		simulatorFrameworks[${#simulatorFrameworks[@]}]=$simulatorBuildDir"/"$file
 		iphoneFrameworks[${#iphoneFrameworks[@]}]=$iphoneBuildDir"/"$file
-	elif [[ $((`echo $file | grep -i "\.dSYM$" | wc -c`)) == 0 ]]
+	elif [[ $((`echo $file | grep -i "\.dSYM$" | wc -c`)) > 0 ]]
 	then
+		simulatorDSYMs[${#simulatorDSYMs[@]}]=$simulatorBuildDir"/"$file
+		iphoneDSYMs[${#iphoneDSYMs[@]}]=$iphoneBuildDir"/"$file
+	else
 		simulatorLibIncludes[${#simulatorLibIncludes[@]}]=$simulatorBuildDir"/"$file
 		iphoneLibIncludes[${#iphoneLibIncludes[@]}]=$iphoneBuildDir"/"$file
 	fi
@@ -107,22 +111,24 @@ echoStep "Make Fat Library & Dylib"
 
 libDir="lib"
 dylibDir="dylib"
-
 rm -rf $libDir $dylibDir
-mkdir $libDir $dylibDir
+
+libProjectDir="lib/$scheme"
+dylibProjectDir="dylib/$scheme"
+mkdir -p $libProjectDir $dylibProjectDir
 
 fatLibIndex=0
 
 while (( $fatLibIndex < ${#simulatorLibs[@]} ))
 do
-	lipo -output $libDir"/"${fatLibs[$fatLibIndex]} -create ${simulatorLibs[$fatLibIndex]} ${iphoneLibs[$fatLibIndex]}
+	lipo -output $libProjectDir"/"${fatLibs[$fatLibIndex]} -create ${simulatorLibs[$fatLibIndex]} ${iphoneLibs[$fatLibIndex]}
 	fatLibIndex=$((fatLibIndex + 1))
 done
 
 for iphoneLibInclude in ${iphoneLibIncludes[@]}
 do
 	includeFile=${iphoneLibInclude##*/}
-	cp -rf $iphoneLibInclude $libDir"/"$includeFile
+	cp -rf $iphoneLibInclude $libProjectDir"/"$includeFile
 done
 
 fatDylibIndex=0
@@ -136,14 +142,41 @@ do
 	simulatorDylib=${simulatorFrameworks[$fatDylibIndex]}"/"$dylibName
 	iphoneDylib=${iphoneFrameworks[$fatDylibIndex]}"/"$dylibName
 
-	cp -rf ${iphoneFrameworks[$fatDylibIndex]} "$dylibDir/$dylibName.framework"
+	cp -rf ${iphoneFrameworks[$fatDylibIndex]} "$dylibProjectDir/$dylibName.framework"
 
-	rm -rf "$dylibDir/$dylibName.framework/$dylibName"
+	fatDstPath="$dylibProjectDir/$dylibName.framework/$dylibName"
 
-	lipo -output "$dylibDir/$dylibName.framework/$dylibName" -create $simulatorDylib $iphoneDylib
+	rm -rf $fatDstPath
+
+	lipo -output $fatDstPath -create $simulatorDylib $iphoneDylib
 
 	fatDylibIndex=$((fatDylibIndex + 1))
 done
+
+fatDSYMIndex=0
+
+while (( $fatDSYMIndex < ${#simulatorDSYMs[@]} ))
+do
+	dSYMName=${simulatorDSYMs[$fatDSYMIndex]}
+	dSYMName=${dSYMName%%.*}
+	dSYMName=${dSYMName##*/}
+
+	simulatorDSYM="${simulatorDSYMs[$fatDSYMIndex]}/Contents/Resources/DWARF/$dSYMName"
+	iphoneDSYM="${iphoneDSYMs[$fatDSYMIndex]}/Contents/Resources/DWARF/$dSYMName"
+
+	fatDstPath="$dylibProjectDir/$dSYMName.framework.dSYM/Contents/Resources/DWARF/$dSYMName"
+
+	cp -rf ${iphoneDSYMs[$fatDSYMIndex]} "$dylibProjectDir/$dSYMName.framework.dSYM"
+
+	rm -rf $fatDstPath
+
+	lipo -output $fatDstPath -create $simulatorDSYM $iphoneDSYM
+
+	fatDSYMIndex=$((fatDSYMIndex + 1))
+
+done
+
+echoStep "Zip Fat Library & Dylib"
 
 
 
