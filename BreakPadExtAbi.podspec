@@ -41,11 +41,12 @@ BreakPadExt Binary Dependency.
     lib.user_target_xcconfig = { 'HEADER_SEARCH_PATHS' => "\"${PODS_ROOT}/#{s.name}/include\"" }
   end
   
+  dylibName = 'BreakPadExtDylib.framework'
   s.subspec 'Dylib' do |dylib|
-    dylib.vendored_frameworks = 'BreakPadExtDylib.framework'
+    dylib.vendored_frameworks = dylibName
     dylib.resources = 'BreakPadExtDylib.framework.dSYM'
-    dylib.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => "\"${PODS_ROOT}/#{dylib.vendored_frameworks}/Headers\"" }
-    dylib.user_target_xcconfig = { 'HEADER_SEARCH_PATHS' => "\"${PODS_ROOT}/#{dylib.vendored_frameworks}/Headers\"" }
+    dylib.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => "\"${PODS_ROOT}/#{s.name}/#{dylibName}/Headers\"" }
+    dylib.user_target_xcconfig = { 'HEADER_SEARCH_PATHS' => "\"${PODS_ROOT}/#{s.name}/#{dylibName}/Headers\"" }
   end
   
   # s.resource_bundles = {
