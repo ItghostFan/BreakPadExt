@@ -15,6 +15,8 @@ function echoStep () {
     echo $step
 }
 
+currentDir=`pwd`
+
 inputCount=$#
 scheme=""
 project=""
@@ -177,6 +179,34 @@ do
 done
 
 echoStep "Zip Fat Library & Dylib"
+
+binDir="bin"
+tmpDir="$binDir/tmp"
+
+rm -rf $binDir
+mkdir -p $tmpDir
+
+libSrcs=`ls -d $libProjectDir"/"`
+dylibSrcs=`ls -d $dylibProjectDir"/"`
+
+cp -rf ${libSrcs[@]} ${dylibSrcs} "$tmpDir/"
+
+cd $tmpDir
+
+zipFiles=`ls`
+
+currentTime=`date "+%Y_%m_%d_%H_%M_%S"`
+
+zipFile="$scheme.zip"
+
+zip $zipFile -r ${zipFiles[@]}
+
+cp -rf $zipFile "../"
+
+cd $currentDir
+rm -rf $tmpDir
+
+echoStep "All Done!"
 
 
 
