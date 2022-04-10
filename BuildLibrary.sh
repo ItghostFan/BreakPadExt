@@ -197,7 +197,7 @@ zipFiles=`ls`
 
 currentTime=`date "+%Y_%m_%d_%H_%M_%S"`
 
-zipFile="$scheme.zip"
+zipFile="$scheme-$currentTime.zip"
 
 zip $zipFile -r ${zipFiles[@]}
 
