@@ -2,9 +2,15 @@
 
 platform :ios, '9.0'
 
+source 'https://cdn.cocoapods.org/'
+source 'https://github.com/ItghostFan/Specs.git'
+
+install! 'cocoapods',
+  :generate_multiple_pod_projects => true
+
 target 'BreakPadExt_Example' do
-#  pod 'BreakPadExt', :git => 'https://github.com/ItghostFan/BreakPadExt.git'
-  pod 'BreakPadExt', :path => '../'
+  pod 'BreakPadExtAbi/Dylib'
+#  pod 'BreakPadExt', :path => '../'
   pod 'ReactiveObjC'
   pod 'Masonry'
 
