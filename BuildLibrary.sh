@@ -119,6 +119,8 @@ libProjectDir="lib/$scheme"
 dylibProjectDir="dylib/$scheme"
 mkdir -p $libProjectDir $dylibProjectDir
 
+allBinaries=()
+
 fatLibIndex=0
 
 while (( $fatLibIndex < ${#simulatorLibs[@]} ))
@@ -151,6 +153,7 @@ do
 	rm -rf $fatDstPath
 
 	lipo -output $fatDstPath -create $simulatorDylib $iphoneDylib
+	allBinaries[${#allBinaries[@]}]=$fatDstPath
 
 	fatDylibIndex=$((fatDylibIndex + 1))
 done
@@ -173,9 +176,15 @@ do
 	rm -rf $fatDstPath
 
 	lipo -output $fatDstPath -create $simulatorDSYM $iphoneDSYM
+	allBinaries[${#allBinaries[@]}]=$fatDstPath
 
 	fatDSYMIndex=$((fatDSYMIndex + 1))
 
+done
+
+for binary in ${allBinaries[@]}
+do
+	echo `lipo -info $binary`
 done
 
 echoStep "Zip Fat Library & Dylib"
